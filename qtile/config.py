@@ -107,6 +107,7 @@ keys = [
     Key([mod, "shift"], "b", lazy.spawn("firefox"), desc="Launch Firefox"),
     Key([mod], "s", lazy.spawn("bash -c 'env LD_PRELOAD=/usr/lib/spotify-adblock.so spotify --uri=%U'"), desc="Launch Spotify"),
     Key([mod], "o", lazy.spawn("obsidian"), desc="Launch Obsidian"),
+    Key([mod], "a", lazy.spawn("anki"), desc="Launch Anki"),
     Key([mod], "d", lazy.spawn("discord"), desc="Launch Discord"),
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
@@ -208,6 +209,8 @@ keys = [
     ),
     Key([], "XF86AudioNext", lazy.spawn("playerctl next"), desc="Skip to next"),
     Key([], "XF86AudioPrev", lazy.spawn("playerctl previous"), desc="Skip to previous"),
+    Key([], "XF86MonBrightnessDown", lazy.spawn("sudo brillo -q -u 200000 -U 5%"), desc="Lower Brightness by 5%"),
+    Key([], "XF86MonBrightnessUp", lazy.spawn("sudo brillo -q -u 200000 -A 5%"), desc="Raise Brightness by 5%"), 
     Key([], "Print", lazy.spawn("/home/danielwee/.config/qtile/screenshotter.sh full")),
     Key(
         ["control"],
@@ -463,6 +466,14 @@ def primary_top_bar():
                     rect_decor(),
                 ],
             ),
+            # widget.Backlight(
+            #     font="Fira Code",
+            #     fontsize=14,
+            #     padding=10,
+            #     decorations=[
+            #         rect_decor(),
+            #     ],
+            # ),
             separator(),
             widget.TextBox(
                 text="Logout",
@@ -617,6 +628,14 @@ def secondary_top_bar(monitor_num):
                     rect_decor(),
                 ],
             ),
+            # widget.Backlight(
+            #     font="Fira Code",
+            #     fontsize=14,
+            #     padding=10,
+            #     decorations=[
+            #         rect_decor(),
+            #     ],
+            # ),
             separator(),
             widget.TextBox(
                 text="Logout",
