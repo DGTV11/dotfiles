@@ -346,18 +346,24 @@ def rect_decor():
 def primary_top_bar():
     return bar.Bar(
         [
-            widget.GroupBox(
-                font="Fira Code",
-                fontsize=16,
-                padding=8,
-                borderwidth=3,
-                active="#c3cdd9",
-                inactive="#7c7c7c",
-                highlight_method="block",
-                this_current_screen_border="#7aa2f7",
-                decorations=[
-                    rect_decor(),
-                ],
+            widget.WidgetBox(
+                text_closed='[>]',
+                text_open='[<]',
+                widgets=[
+                    widget.GroupBox(
+                        font="Fira Code",
+                        fontsize=16,
+                        padding=8,
+                        borderwidth=3,
+                        active="#c3cdd9",
+                        inactive="#7c7c7c",
+                        highlight_method="block",
+                        this_current_screen_border="#7aa2f7",
+                        decorations=[
+                            rect_decor(),
+                        ],
+                    ),
+                ]
             ),
             separator(),
             widget.TextBox(
@@ -515,18 +521,24 @@ def primary_top_bar():
 def secondary_top_bar(monitor_num):
     return bar.Bar(
         [
-            widget.GroupBox(
-                font="Fira Code",
-                fontsize=16,
-                padding=8,
-                borderwidth=3,
-                active="#c3cdd9",
-                inactive="#7c7c7c",
-                highlight_method="block",
-                this_current_screen_border="#7aa2f7",
-                decorations=[
-                    rect_decor(),
-                ],
+            widget.WidgetBox(
+                text_closed='[>]',
+                text_open='[<]',
+                widgets=[
+                    widget.GroupBox(
+                        font="Fira Code",
+                        fontsize=16,
+                        padding=8,
+                        borderwidth=3,
+                        active="#c3cdd9",
+                        inactive="#7c7c7c",
+                        highlight_method="block",
+                        this_current_screen_border="#7aa2f7",
+                        decorations=[
+                            rect_decor(),
+                        ],
+                    ),
+                ]
             ),
             separator(),
             widget.TextBox(
