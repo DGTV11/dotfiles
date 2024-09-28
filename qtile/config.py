@@ -109,6 +109,7 @@ keys = [
     Key([mod], "o", lazy.spawn("obsidian"), desc="Launch Obsidian"),
     Key([mod], "a", lazy.spawn("anki"), desc="Launch Anki"),
     Key([mod, "shift"], "t", lazy.spawn("thunar"), desc="Launch Thunar"),
+    Key([mod], "t", lazy.spawn("teams"), desc="Launch MS Teams"),
     Key([mod], "d", lazy.spawn("discord"), desc="Launch Discord"),
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
@@ -120,7 +121,7 @@ keys = [
         desc="Toggle fullscreen on the focused window",
     ),
     Key(
-        [mod],
+        [mod, "control"],
         "t",
         lazy.window.toggle_floating(),
         desc="Toggle floating on the focused window",
