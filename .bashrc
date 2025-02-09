@@ -171,7 +171,7 @@ export PF_INFO="ascii title os kernel uptime pkgs shell memory palette"
 export PF_CUSTOM_LOGOS=~/.config/pfetch_logos
 
 # manpager
-export MANPAGER='/usr/bin/manpager'
+export MANPAGER='/usr/local/bin/manpager'
 
 # ==============================================================================
 # Custom Functions

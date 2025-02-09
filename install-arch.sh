@@ -39,7 +39,7 @@ sudo systemctl enable dcron.service
 
 ## Applications
 echo "Installing CLI applications..."
-sudo pacman -S wget cava btop ssh rsync stow fzf pulseaudio-ctl playerctl brillo unimatrix bat laztgit zoxide ffmpeg yt-dlp termdown du ncdu unzip zip tar screen
+sudo pacman -S curl wget cava btop ssh rsync stow fzf pulseaudio-ctl playerctl brillo unimatrix bat laztgit zoxide ffmpeg yt-dlp termdown du ncdu unzip zip tar screen
 paru -S pfetch-rs
 
 echo "Installing GUI applications..."
@@ -102,6 +102,10 @@ sudo cp misc/systemd-services/reflector.service /usr/lib/systemd/system/reflecto
 sudo chown root:root /etc/systemd/system/paccache.timer /etc/systemd/system/paccache.timer /usr/lib/systemd/system/paccache.service /usr/lib/systemd/system/reflector.service
 
 sudo systemctl enable paccache.timer reflector.timer
+
+## /usr/local/bin/
+wget --output-document /tmp/workdir/manpager.c https://gitweb.gentoo.org/repo/gentoo.git/plain/app-text/manpager/files/manpager.c
+sudo gcc /tmp/workdir/manpager.c -o /usr/local/bin/manpager
 
 ## ~/
 stow .
