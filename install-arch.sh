@@ -17,26 +17,26 @@ rm -rf paru
 
 ## Basic packages
 echo "Installing basic packages..."
-sudo pacman -S python python-pip rustup sccache neovim qtile lightdm lightdm-gtk-greeter plymouth picom udiskie pulseaudio greenclip xorg-server xorg-xrandr autorandr checkupdates docker docker-compose xclip nvm nftbales reflector
-paru -S qtile-extras dcron
+sudo pacman -S python python-pip rustup sccache neovim qtile lightdm lightdm-gtk-greeter plymouth picom udiskie pulseaudio xorg-server xorg-xrandr autorandr checkupdates docker docker-compose xclip nftables reflector
+paru -S qtile-extras dcron nvm checkupdates rofi-greenclip
 
 echo "Installing node (version 20) and pnpm..."
 nvm use 20
 npm install -g pnpm@latest-10
 
 echo "Setting up basic packages..."
-sudo systemctl start lightdm.service
+sudo systemctl enable lightdm.service
 git config --global core.editor nvim
 
-sudo systemctl enable docker
+sudo systemctl enable docker.service
 sudo usermod -aG docker $USER
 
 sudo systemctl enable dcron.service
 
 ## Applications
 echo "Installing CLI applications..."
-sudo pacman -S curl wget cava btop ssh rsync stow fzf pulseaudio-ctl playerctl brillo unimatrix bat laztgit zoxide ffmpeg yt-dlp termdown du ncdu unzip zip tar screen
-paru -S pfetch-rs
+sudo pacman -S curl wget btop openssh rsync stow fzf playerctl bat lazygit zoxide ffmpeg yt-dlp termdown ncdu unzip zip tar screen
+paru -S pfetch-rs pulseaudio-ctl cava brillo unimatrix
 
 echo "Installing GUI applications..."
 sudo pacman -S alacritty rofi firefox qutebrowser workrave obsidian anki thunar solanum discord libreoffice flameshot klogg imagemagick xournalpp
@@ -71,13 +71,13 @@ cat misc/sudoers | sed 's/sigmauser/danielwee/g' | sudo tee /etc/sudoers
 sudo cp misc/pacman.conf /etc/pacman.conf
 
 ## /usr/share/pixmaps/
-cp misc/images/jigglypuff.jpg /usr/share/pixmaps/jigglypuff.jpg
-cp misc/images/lockscreen-wallpaper.jpg /usr/share/pixmaps/lockscreen-wallpaper.jpg
+sudo cp misc/images/jigglypuff.jpg /usr/share/pixmaps/jigglypuff.jpg
+sudo cp misc/images/lockscreen-wallpaper.jpg /usr/share/pixmaps/lockscreen-wallpaper.jpg
 sudo chown root:root /usr/share/pixmaps/jigglypuff.jpg /usr/share/pixmaps/lockscreen-wallpaper.jpg
 sudo chmod 644 /usr/share/pixmaps/jigglypuff.jpg /usr/share/pixmaps/lockscreen-wallpaper.jpg
 
 ## /etc/lightdm/lightdm-gtk-greeter.conf
-cp misc/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
+sudo cp misc/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
 sudo chown root:root /etc/lightdm/lightdm-gtk-greeter.conf
 sudo chmod 644 /etc/lightdm/lightdm-gtk-greeter.conf
 
