@@ -3,11 +3,7 @@ mkdir ~/Documents ~/Downloads ~/Music ~/Pictures
 
 # Make temporary working directory and dotfiles folder
 mkdir /tmp/workdir
-ORIG_DIR=$(pwd)
-cd ../
 cd /tmp/workdir
-
-mv $ORIG_DIR $HOME/dotfiles
 
 # Install packages
 ## AUR Helper
