@@ -1,0 +1,20 @@
+[Aa]rch*)
+	read_ascii 1 <<- EOF
+${c3} b
+${c6} .-
+ |
+-'  ${c5}f'(x)${c6}dx
+${c3} a
+${c6} = ${c4}f(${c3}b${c4}) - ${c4}f(${c3}a${c4})
+	EOF
+	;;
+[Gg]entoo*)
+	read_ascii 1 <<- EOF
+${c3} b
+${c6} .-
+ |
+-'  ${c5}f'(x)${c6}dx
+${c3} a
+${c6} = ${c4}f(${c3}b${c4}) - ${c4}f(${c3}a${c4})
+	EOF
+	;;
