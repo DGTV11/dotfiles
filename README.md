@@ -90,7 +90,7 @@
 # passwd <username>
 ```
 
-16) Uncomment the line `%wheel ALL=(ALL) ALL` in /etc/sudoers
+16) Uncomment the line `%wheel ALL=(ALL) NOPASSWD: ALL` in /etc/sudoers
 - Run the below command:
 ```bash
 # EDITOR=nvim visudo
