@@ -1,4 +1,6 @@
 # dotfiles
+![SigmArch](misc/images/spinner-watermark.png)
+
 ## Installation from scratch
 ### Arch Linux
 0) Get live environment and target x86_64 system (preferably EFI, ensure that `cat /sys/firmware/efi/fw_platform_size` returns `64`)
@@ -108,6 +110,8 @@
 ```
 
 19) Reboot and log into regular user
+
+> NOTE: the next steps are EXPERIMENTAL and are NOT guaranteed to work!
 
 20) Clone dotfiles repository
 ```bash
