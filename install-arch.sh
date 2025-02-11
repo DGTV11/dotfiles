@@ -1,3 +1,12 @@
+# Obligatory warning
+echo "WARNING: This script is EXPERIMENTAL and may not work for your system! Please double-check this script before running it!"
+echo "This script assumes that you have followed the install instructions in the README!"
+
+read -p "Do you wish to continue (y/n)?" CONT
+if [ ! "$CONT" = "y" ]; then
+  [[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1 # handle exits from shell or function but don't exit interactive shell
+fi
+
 # Prepare home directory
 mkdir ~/Documents ~/Downloads ~/Music ~/Pictures
 
@@ -7,8 +16,11 @@ cd /tmp/workdir
 
 # Install packages
 ## AUR Helper
+echo "Installing rustup and sccache"
+sudo pacman -S rustup sccache
+rustup default stable
+
 echo "Installing AUR helper..."
-sudo pacman -S --needed base-devel
 git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si
@@ -17,7 +29,7 @@ rm -rf paru
 
 ## Basic packages
 echo "Installing basic packages..."
-sudo pacman -S python python-pip rustup sccache neovim qtile lightdm lightdm-gtk-greeter plymouth picom udiskie pulseaudio xorg-server xorg-xrandr autorandr checkupdates docker docker-compose xclip nftables reflector
+sudo pacman -S pacman-contrib python python-pip neovim qtile lightdm lightdm-gtk-greeter plymouth picom udiskie pulseaudio xorg-server xorg-xrandr autorandr checkupdates docker docker-compose xclip nftables reflector
 paru -S qtile-extras dcron nvm checkupdates rofi-greenclip
 
 echo "Installing node (version 20) and pnpm..."
