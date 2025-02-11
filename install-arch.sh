@@ -29,7 +29,7 @@ rm -rf paru
 
 ## Basic packages
 echo "Installing basic packages..."
-sudo pacman -S pacman-contrib python python-pip neovim qtile lightdm lightdm-gtk-greeter plymouth picom udiskie pulseaudio xorg-server xorg-xrandr autorandr checkupdates docker docker-compose xclip nftables reflector
+sudo pacman -S pacman-contrib python python-pip neovim qtile lightdm lightdm-gtk-greeter plymouth picom udiskie pulseaudio xorg-server xorg-xrandr autorandr docker docker-compose xclip nftables reflector
 paru -S qtile-extras dcron nvm checkupdates rofi-greenclip
 
 echo "Installing node (version 20) and pnpm..."
@@ -38,7 +38,6 @@ npm install -g pnpm@latest-10
 
 echo "Setting up basic packages..."
 sudo systemctl enable lightdm.service
-git config --global core.editor nvim
 
 sudo systemctl enable docker.service
 sudo usermod -aG docker $USER
@@ -114,6 +113,10 @@ sudo systemctl enable paccache.timer reflector.timer
 ## /usr/local/bin/
 wget --output-document /tmp/workdir/manpager.c https://gitweb.gentoo.org/repo/gentoo.git/plain/app-text/manpager/files/manpager.c
 sudo gcc /tmp/workdir/manpager.c -o /usr/local/bin/manpager
+
+## git
+git config --global core.editor nvim
+git config --global init.defaultBranch main
 
 ## ~/
 stow .
