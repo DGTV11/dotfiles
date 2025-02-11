@@ -33,6 +33,7 @@ sudo pacman -S pacman-contrib python python-pip neovim qtile lightdm lightdm-gtk
 paru -S qtile-extras dcron nvm checkupdates rofi-greenclip
 
 echo "Installing node (version 20) and pnpm..."
+source /usr/share/nvm/init-nvm.sh
 nvm use 20
 npm install -g pnpm@latest-10
 
@@ -50,17 +51,18 @@ sudo pacman -S curl wget btop openssh rsync stow fzf playerctl bat lazygit zoxid
 paru -S pfetch-rs pulseaudio-ctl cava brillo unimatrix
 
 echo "Installing GUI applications..."
-sudo pacman -S alacritty rofi firefox qutebrowser workrave obsidian anki thunar solanum discord libreoffice flameshot klogg imagemagick xournalpp
-paru -S wasistlos rofimoji llpp
+sudo pacman -S alacritty rofi firefox qutebrowser workrave obsidian anki thunar solanum discord libreoffice flameshot imagemagick xournalpp
+paru -S wasistlos rofimoji llpp klogg
 
 ## Themes & fonts
 echo "Installing themes and fonts..."
 sudo pacman -S ttf-jetbrains-mono-nerd ttf-space-mono-nerd noto-fonts-cjk noto-fonts-emoji
 paru -S phinger-cursors ttf-ubraille ttf-ms-win11-auto
 
+sudo pacman -S sassc gtk-engine-murrine gnome-themes-extra
 git clone https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme.git
 cd Catppuccin-GTK-Theme
-python3 ./install.sh --dest /usr/share/themes --tweak mac
+sudo python3 ./install.sh --dest /usr/share/themes --tweak mac
 cd ../
 rm -rf Catppuccin-GTK-Theme
 
