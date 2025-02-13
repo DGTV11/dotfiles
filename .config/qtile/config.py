@@ -36,7 +36,8 @@ from libqtile.utils import guess_terminal
 from libqtile.scripts.main import VERSION
 
 mod = "mod4"
-terminal = guess_terminal()
+# terminal = guess_terminal()
+terminal = "alacritty"
 
 
 def window_to_previous_screen(qtile, switch_group=False, switch_screen=False):
@@ -128,7 +129,7 @@ keys = [
         [mod, "shift"],
         "Return",
         lazy.layout.toggle_split(),
-        desc="Toggle between split and unsplit sides of stack",
+        desc="Toggle between split and unsplmakeit sides of stack",
     ),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "b", lazy.spawn("qutebrowser"), desc="Launch Qutebrowser"),
@@ -306,7 +307,7 @@ groups = numerical_groups + [
         dropdowns=[
             DropDown(
                 "term",
-                "alacritty",
+                terminal,
                 x=0.1,
                 y=0.1,
                 width=0.8,
