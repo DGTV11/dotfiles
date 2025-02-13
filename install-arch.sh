@@ -29,7 +29,7 @@ rm -rf paru
 
 ## Basic packages
 echo "Installing basic packages..."
-sudo pacman -S pacman-contrib python python-pip neovim qtile lightdm lightdm-gtk-greeter plymouth picom udiskie pulseaudio xorg-server xorg-xrandr autorandr docker docker-compose xclip nftables reflector
+sudo pacman -S pacman-contrib python python-pip lua neovim qtile lightdm lightdm-gtk-greeter plymouth picom udiskie pulseaudio xorg-server xorg-xrandr autorandr docker docker-compose xclip nftables reflector
 paru -S qtile-extras dcron nvm checkupdates rofi-greenclip
 
 echo "Installing node (version 20) and pnpm..."
@@ -47,8 +47,8 @@ sudo systemctl enable dcron.service
 
 ## Applications
 echo "Installing CLI applications..."
-sudo pacman -S curl wget btop openssh rsync stow fzf playerctl bat lazygit zoxide ffmpeg yt-dlp termdown ncdu unzip zip tar screen
-paru -S pfetch-rs pulseaudio-ctl cava brillo unimatrix
+sudo pacman -S curl wget btop openssh rsync stow fzf playerctl bat lazygit zoxide ffmpeg yt-dlp termdown ncdu unzip zip tar screen ueberzugpp
+paru -S pfetch-rs pulseaudio-ctl cava brillo unimatrix #TODO: add nvim-silicon stuff
 
 echo "Installing GUI applications..."
 sudo pacman -S alacritty rofi firefox qutebrowser workrave obsidian anki thunar solanum discord libreoffice flameshot imagemagick xournalpp
@@ -76,9 +76,6 @@ echo "Configuring system..."
 
 ## Move into dotfiles directory
 cd $HOME/dotfiles
-
-## /etc/sudoers
-cat misc/sudoers | sed 's/sigmauser/danielwee/g' | sudo tee /etc/sudoers
 
 ## /etc/pacman.conf
 sudo cp misc/pacman.conf /etc/pacman.conf
@@ -115,6 +112,9 @@ sudo systemctl enable paccache.timer reflector.timer
 ## /usr/local/bin/
 wget --output-document /tmp/workdir/manpager.c https://gitweb.gentoo.org/repo/gentoo.git/plain/app-text/manpager/files/manpager.c
 sudo gcc /tmp/workdir/manpager.c -o /usr/local/bin/manpager
+
+## /etc/sudoers
+cat misc/sudoers | sudo tee /etc/sudoers
 
 ## git
 git config --global core.editor nvim
