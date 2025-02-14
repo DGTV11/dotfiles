@@ -47,8 +47,8 @@ sudo systemctl enable dcron.service
 
 ## Applications
 echo "Installing CLI applications..."
-sudo pacman -S curl wget btop openssh rsync stow fzf playerctl bat lazygit zoxide ffmpeg yt-dlp termdown ncdu unzip zip tar screen ueberzugpp
-paru -S pfetch-rs pulseaudio-ctl cava brillo unimatrix #TODO: add nvim-silicon stuff
+sudo pacman -S curl wget btop openssh rsync stow fzf playerctl bat lazygit zoxide ffmpeg yt-dlp termdown ncdu unzip zip tar screen ueberzugpp silicon
+paru -S pfetch-rs pulseaudio-ctl cava brillo unimatrix
 
 echo "Installing GUI applications..."
 sudo pacman -S alacritty rofi firefox qutebrowser workrave obsidian anki thunar solanum discord libreoffice flameshot imagemagick xournalpp
