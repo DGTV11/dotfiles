@@ -47,11 +47,11 @@ sudo systemctl enable dcron.service
 
 ## Applications
 echo "Installing CLI applications..."
-sudo pacman -S curl wget btop openssh rsync stow fzf playerctl bat lazygit zoxide ffmpeg yt-dlp termdown ncdu unzip zip tar screen ueberzugpp silicon
+sudo pacman -S less curl wget btop openssh rsync stow fzf playerctl bat lazygit zoxide ffmpeg yt-dlp termdown ncdu unzip zip tar screen ueberzugpp silicon
 paru -S pfetch-rs pulseaudio-ctl cava brillo unimatrix
 
 echo "Installing GUI applications..."
-sudo pacman -S alacritty rofi firefox qutebrowser workrave obsidian anki thunar solanum discord libreoffice flameshot imagemagick xournalpp
+sudo pacman -S alacritty rofi firefox qutebrowser workrave obsidian anki thunar solanum discord libreoffice flameshot imagemagick xournalpp virt-manager
 paru -S wasistlos rofimoji llpp klogg
 
 ## Themes & fonts
@@ -126,6 +126,7 @@ git config --global core.editor nvim
 git config --global init.defaultBranch main
 
 ## ~/
+rm -rf ~/.config ~/.bash_profile ~/.bashrc
 stow .
 
 # Give final messages
