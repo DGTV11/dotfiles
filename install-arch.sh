@@ -91,6 +91,11 @@ sudo cp misc/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
 sudo chown root:root /etc/lightdm/lightdm-gtk-greeter.conf
 sudo chmod 644 /etc/lightdm/lightdm-gtk-greeter.conf
 
+## /root/.bashrc
+sudo cp misc/root-bashrc /root/.bashrc
+sudo chown root:root /root/.bashrc
+sudo chmod 755 /root/.bashrc
+
 ## /usr/share/plymouth/themes/
 sudo cp -r misc/bgrt-alt.plymouth /usr/share/plymouth/themes/bgrt-alt/bgrt-alt.plymouth
 sudo chown -R root:root /usr/share/plymouth/themes/bgrt-alt
