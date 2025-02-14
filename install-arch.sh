@@ -30,11 +30,11 @@ rm -rf paru
 ## Basic packages
 echo "Installing basic packages..."
 sudo pacman -S pacman-contrib python python-pip lua neovim qtile lightdm lightdm-gtk-greeter plymouth picom udiskie pulseaudio xorg-server xorg-xrandr autorandr docker docker-compose xclip nftables reflector
-paru -S qtile-extras dcron nvm checkupdates rofi-greenclip
+paru -S qtile-extras dcron nvm rofi-greenclip
 
 echo "Installing node (version 20) and pnpm..."
 source /usr/share/nvm/init-nvm.sh
-nvm use 20
+nvm install 20
 npm install -g pnpm@latest-10
 
 echo "Setting up basic packages..."
