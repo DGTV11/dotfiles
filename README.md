@@ -43,13 +43,13 @@
 7) Update mirrorlist
 ```bash
 # pacman -Sy pacman-contrib
-# cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
-# rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist
+# cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
+# rankmirrors -n 6 /etc/pacman.d/mirrorlist.bak > /etc/pacman.d/mirrorlist
 ```
 
 8) Bootstrap system
 ```bash
-# pacstrap -K /mnt base base-devel linux-zen linux-firmware sof-firmware sof-tools grub efibootmgr net-tools networkmanager neovim git
+# pacstrap -K /mnt base base-devel linux-zen linux-firmware sof-firmware sof-tools <grub or another bootloader> efibootmgr net-tools networkmanager neovim git
 ```
 
 9) Generate fstab and verify it
