@@ -29,7 +29,7 @@ rm -rf paru
 
 ## Basic packages
 echo "Installing basic packages..."
-sudo pacman -S pacman-contrib python python-pip lua neovim qtile lightdm lightdm-gtk-greeter plymouth picom udiskie pulseaudio xorg-server xorg-xrandr autorandr docker docker-compose xclip nftables reflector
+sudo pacman -S pacman-contrib python python-pip lua neovim qtile python-xlib lightdm lightdm-gtk-greeter plymouth picom udiskie pulseaudio xorg-server xorg-xrandr autorandr docker docker-compose xclip nftables reflector
 paru -S qtile-extras dcron nvm rofi-greenclip
 
 echo "Installing node (version 20) and pnpm..."
@@ -47,12 +47,12 @@ sudo systemctl enable dcron.service
 
 ## Applications
 echo "Installing CLI applications..."
-sudo pacman -S less curl wget btop openssh rsync stow fzf playerctl bat lazygit zoxide ffmpeg yt-dlp termdown ncdu unzip zip tar screen ueberzugpp silicon
+sudo pacman -S fastfetch starship less curl wget btop openssh rsync stow fzf playerctl bat lazygit starship zoxide thefuck ffmpeg yt-dlp termdown ncdu unzip zip tar screen ueberzugpp silicon
 paru -S pfetch-rs pulseaudio-ctl cava brillo unimatrix
 
 echo "Installing GUI applications..."
-sudo pacman -S alacritty rofi firefox qutebrowser workrave obsidian anki thunar solanum discord libreoffice flameshot imagemagick xournalpp virt-manager
-paru -S wasistlos rofimoji llpp klogg
+sudo pacman -S alacritty rofi firefox qutebrowser workrave obsidian thunar solanum discord libreoffice flameshot imagemagick xournalpp virt-manager
+paru -S wasistlos rofimoji llpp klogg anki
 
 ## Themes & fonts
 echo "Installing themes and fonts..."
@@ -62,7 +62,7 @@ paru -S phinger-cursors ttf-ubraille ttf-ms-win11-auto
 sudo pacman -S sassc gtk-engine-murrine gnome-themes-extra
 git clone https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme.git
 cd Catppuccin-GTK-Theme
-sudo python3 ./install.sh --dest /usr/share/themes --tweak mac
+sudo themes/install.sh --dest /usr/share/themes --name Catppuccin-B-MB
 cd ../
 rm -rf Catppuccin-GTK-Theme
 
@@ -97,6 +97,7 @@ sudo chown root:root /root/.bashrc
 sudo chmod 755 /root/.bashrc
 
 ## /usr/share/plymouth/themes/
+sudo mkdir /usr/share/plymouth/themes/bgrt-alt
 sudo cp -r misc/bgrt-alt.plymouth /usr/share/plymouth/themes/bgrt-alt/bgrt-alt.plymouth
 sudo chown -R root:root /usr/share/plymouth/themes/bgrt-alt
 sudo cp -r /usr/share/plymouth/themes/spinner /usr/share/plymouth/themes/spinner-alt
