@@ -134,6 +134,7 @@ alias q="exit"
 alias sn="shutdown now"
 alias office="libreoffice"
 alias ytdown="yt-dlp --embed-thumbnail -f bestaudio -x --audio-format mp3 --audio-quality 0"
+# alias rpivpn="sudo openvpn --config /etc/openvpn/openvpn.conf"
 
 # Alert for long running commands
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
