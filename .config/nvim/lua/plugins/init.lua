@@ -1,6 +1,8 @@
 package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?/init.lua"
 package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?.lua"
 
+vim.api.nvim_set_hl(0, "IndentScope", { fg = "#89dceb" })
+
 return {
   {
     "stevearc/conform.nvim",
@@ -69,10 +71,24 @@ return {
   },
   {
       "lukas-reineke/indent-blankline.nvim",
+      lazy = false,
       main = "ibl",
       ---@module "ibl"
       ---@type ibl.config
-      opts = {},
+      opts = {
+        scope = {
+          enabled = true,
+          char = "┋",
+          -- show_start = true,
+          show_start = false,
+          show_end = false,
+          show_exact_scope = true,
+          injected_languages = false,
+          -- highlight = { "Function", "Label" },
+          highlight = { "IndentScope" },
+          priority = 500,
+      }
+    },
   },
   {
     "kdheepak/lazygit.nvim",
@@ -248,4 +264,7 @@ return {
       })
     end
   },
+  -- {
+  --   "rcarriga/nvim-notify"
+  -- },
 }
