@@ -39,3 +39,4 @@ vim.schedule(function()
 end)
 
 vim.opt.conceallevel = 1
+vim.opt.mouse = ""
