@@ -313,6 +313,7 @@ groups = numerical_groups + [
                 y=0.1,
                 width=0.8,
                 height=0.8,
+                opacity=1.0,
                 on_focus_lost_hide = False,
             ),
             DropDown(
@@ -322,6 +323,7 @@ groups = numerical_groups + [
                 y=0.1,
                 width=0.8,
                 height=0.8,
+                opacity=1.0,
                 on_focus_lost_hide = False,
             ),
         ],
