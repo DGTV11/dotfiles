@@ -78,7 +78,7 @@ return {
       opts = {
         scope = {
           enabled = true,
-          char = "┋",
+          char = "┃",
           -- show_start = true,
           show_start = false,
           show_end = false,
