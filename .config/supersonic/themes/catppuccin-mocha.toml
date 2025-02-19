@@ -7,8 +7,8 @@ SupportsLight = true
 # Mocha
 [DarkColors]
 PageBackground = "#11111B" # Base
-ListHeader = "#9399B2" # Overlay 2
-PageHeader = "#7f849c" # Overlay 1
+ListHeader = "#585B70" # Surface 2
+PageHeader = "#45475A" # Surface 1
 Background = "#1E1E2E" # Base
 ScrollBar = "#9399B2" # Overlay 2
 Button = "#31324432" # Surface 0
@@ -17,8 +17,8 @@ InputBackground = "#9399B232" # Overlay 2
 # Latte
 [LightColors]
 PageBackground = "#DCE0E8" # Crust
-ListHeader = "#7C7F93" # Overlay 2
-PageHeader = "#8C8FA1" # Overlay 1
+ListHeader = "#ACB0BE" # Surface 2
+PageHeader = "#BCC0CC" # Surface 1
 Background = "#EFF1F5" # Base
 ScrollBar = "#7C7F93" # Overlay 2
 Button = "#6C6F8532" # Surface 0
