@@ -132,7 +132,7 @@ return {
       workspaces = {
         {
           name = "THE VAULT",
-          path = "~/vaults/THE-VAULT",
+          path = vim.fn.expand('$HOME/vaults/THE-VAULT')
         },
       },
       disable_frontmatter = true,
@@ -264,6 +264,15 @@ return {
       })
     end
   },
+  {
+    "atiladefreitas/dooing",
+    lazy = false,
+    config = function()
+        require("dooing").setup({
+            save_path = vim.fn.expand('$HOME/vaults/THE-VAULT/dooing_todos.json')
+        })
+    end,
+  }
   -- {
   --   "rcarriga/nvim-notify"
   -- },
