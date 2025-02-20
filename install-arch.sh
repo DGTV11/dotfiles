@@ -29,7 +29,7 @@ rm -rf paru
 
 ## Basic packages
 echo "Installing basic packages..."
-sudo pacman -S pacman-contrib python python-pip lua neovim qtile python-xlib lightdm lightdm-gtk-greeter plymouth picom udiskie pulseaudio xorg-server xorg-xrandr autorandr docker docker-compose xclip nftables reflector
+sudo pacman -S pacman-contrib python python-pip lua go neovim qtile python-xlib lightdm lightdm-gtk-greeter plymouth picom udiskie pulseaudio xorg-server xorg-xrandr autorandr docker docker-compose xclip nftables reflector
 paru -S qtile-extras dcron nvm rofi-greenclip
 
 echo "Installing node (version 20) and pnpm..."
@@ -66,9 +66,18 @@ sudo themes/install.sh --dest /usr/share/themes --name Catppuccin-B-MB
 cd ../
 rm -rf Catppuccin-GTK-Theme
 
+## Formatters
+echo "Installing code formatters"
+sudo pacman -S python-black python-isort prettier
+git clone https://github.com/moorereason/mdfmt.git
+cd mdfmt
+go install
+cd ../
+rm -rf mdfmt
+
 ## Python packages
 echo "Installing Python packages..."
-sudo pacman -S sagemath python-pycryptodome python-pwntools python-psutil python-black
+sudo pacman -S sagemath python-pycryptodome python-pwntools python-psutil
 paru -S python-pulsectl-asyncio
 
 # Configure system

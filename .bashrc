@@ -149,6 +149,9 @@ export PATH="$PATH:$HOME/.local/bin"
 # Spicetify
 export PATH="$PATH:$HOME/.spicetify"
 
+# go path
+export PATH="$PATH:$(go env GOPATH)/bin"
+
 # Cargo environment
 . "$HOME/.cargo/env"
 
