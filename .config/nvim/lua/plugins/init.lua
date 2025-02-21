@@ -236,7 +236,7 @@ return {
         {
           -- backend = "kitty",
           backend = "ueberzug",
-          kitty_method = "normal",
+          -- kitty_method = "normal",
           -- processor = "magick_rock", -- or "magick_cli"
           processor = "magick_cli",
           integrations = {
