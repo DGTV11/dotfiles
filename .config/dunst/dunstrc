@@ -15,7 +15,7 @@ sort                 = yes
 idle_threshold       = 0
 
 # Text
-font                 = Jetbrains Mono Nerd Font NL 10
+font                 = JetBrainsMonoNL NF 10
 line-height          = 0
 markup               = full
 format               = "<b>%a</b>\n<i>%s</i>\n%b"
