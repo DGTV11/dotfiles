@@ -24,16 +24,17 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from libqtile import bar, qtile, hook
-import os, subprocess
+import os
+import subprocess
 
-from qtile_extras import widget, layout
+from libqtile import bar, hook, qtile
+from libqtile.config import Click, Drag, DropDown, Group, Key, Match, ScratchPad, Screen
+from libqtile.lazy import lazy
+from libqtile.scripts.main import VERSION
+from libqtile.utils import guess_terminal
+from qtile_extras import layout, widget
 from qtile_extras.layout.decorations import ScreenGradientBorder
 from qtile_extras.widget.decorations import PowerLineDecoration, RectDecoration
-from libqtile.config import Click, Drag, Group, ScratchPad, DropDown, Key, Match, Screen
-from libqtile.lazy import lazy
-from libqtile.utils import guess_terminal
-from libqtile.scripts.main import VERSION
 
 mod = "mod4"
 # terminal = guess_terminal()
@@ -153,8 +154,8 @@ keys = [
     Key([mod], "a", lazy.spawn("anki"), desc="Launch Anki"),
     # Key([mod, "shift"], "t", lazy.spawn("thunar"), desc="Launch Thunar"),
     Key([mod], "t", lazy.spawn("thunar"), desc="Launch Thunar"),
+    Key([mod, "shift"], "t", lazy.spawn("teams"), desc="Launch MS Teams"),
     Key([mod, "shift"], "w", lazy.spawn("wasistlos"), desc="Launch Whatsapp for Linux"),
-    # Key([mod], "t", lazy.spawn("teams"), desc="Launch MS Teams"),
     Key([mod], "d", lazy.spawn("discord"), desc="Launch Discord"),
     Key([mod, "shift"], "v", lazy.spawn("virt-manager"), desc="Launch virt-manager"),
     # Toggle between different layouts as defined below
@@ -279,7 +280,11 @@ keys = [
         lazy.spawn("sudo brillo -q -u 200000 -A 5%"),
         desc="Raise Brightness by 5%",
     ),
-    Key([], "Print", lazy.spawn(f"/home/{os.getlogin()}/.config/qtile/screenshotter.sh full")),
+    Key(
+        [],
+        "Print",
+        lazy.spawn(f"/home/{os.getlogin()}/.config/qtile/screenshotter.sh full"),
+    ),
     Key(
         ["control"],
         "Print",
@@ -307,14 +312,24 @@ groups = numerical_groups + [
         name="scratchpad",
         dropdowns=[
             DropDown(
-                "term",
+                "term1",
                 terminal,
                 x=0.1,
                 y=0.1,
                 width=0.8,
                 height=0.8,
                 opacity=1.0,
-                on_focus_lost_hide = False,
+                on_focus_lost_hide=False,
+            ),
+            DropDown(
+                "term2",
+                terminal,
+                x=0.1,
+                y=0.1,
+                width=0.8,
+                height=0.8,
+                opacity=1.0,
+                on_focus_lost_hide=False,
             ),
             DropDown(
                 "music",
@@ -324,7 +339,7 @@ groups = numerical_groups + [
                 width=0.8,
                 height=0.8,
                 opacity=1.0,
-                on_focus_lost_hide = False,
+                on_focus_lost_hide=False,
             ),
         ],
         single=True,
@@ -361,13 +376,19 @@ keys.extend(
             [mod, "control"],
             "Return",
             lazy.group["scratchpad"].dropdown_toggle("term"),
-            desc="Launch terminal in scratchpad",
+            desc="Toggle 1st terminal in scratchpad",
+        ),
+        Key(
+            [mod, "control"],
+            "Return",
+            lazy.group["scratchpad"].dropdown_toggle("term"),
+            desc="Toggle 2nd terminal in scratchpad",
         ),
         Key(
             [mod, "control"],
             "j",
             lazy.group["scratchpad"].dropdown_toggle("music"),
-            desc="Launch Supersonic in scratchpad",
+            desc="Toggle Supersonic in scratchpad",
         ),
     ]
 )
@@ -398,8 +419,8 @@ layouts = [
     layout.Spiral(**layout_theme, ratio=0.5, new_client_position="after_current"),
 ]
 
-from Xlib import display as xdisplay
 from libqtile.utils import send_notification
+from Xlib import display as xdisplay
 
 
 def get_num_monitors():
@@ -686,7 +707,9 @@ def secondary_top_bar(monitor_num):
 
 # https://raw.githubusercontent.com/42willow/walls-bak/refs/heads/main/dist/Mocha/Kurzgesagt-Cloudy_Quasar_1.png
 
-WALLPAPER_PATH = f"/home/{os.getlogin()}/.config/qtile/cloudy-quasar-catppuccin-mocha.png"
+WALLPAPER_PATH = (
+    f"/home/{os.getlogin()}/.config/qtile/cloudy-quasar-catppuccin-mocha.png"
+)
 
 screens = [
     Screen(
