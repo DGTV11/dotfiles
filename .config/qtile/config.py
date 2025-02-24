@@ -375,13 +375,13 @@ keys.extend(
         Key(
             [mod, "control"],
             "Return",
-            lazy.group["scratchpad"].dropdown_toggle("term"),
+            lazy.group["scratchpad"].dropdown_toggle("term1"),
             desc="Toggle 1st terminal in scratchpad",
         ),
         Key(
-            [mod, "control"],
+            [mod, "shift"],
             "Return",
-            lazy.group["scratchpad"].dropdown_toggle("term"),
+            lazy.group["scratchpad"].dropdown_toggle("term2"),
             desc="Toggle 2nd terminal in scratchpad",
         ),
         Key(
