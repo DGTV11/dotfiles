@@ -29,7 +29,7 @@ rm -rf paru
 
 ## Basic packages
 echo "Installing basic packages..."
-sudo pacman -S pacman-contrib python python-pip lua go neovim qtile python-xlib lightdm lightdm-gtk-greeter plymouth picom udiskie pulseaudio xorg-server xorg-xrandr autorandr docker docker-compose xclip nftables reflector
+sudo pacman -S pacman-contrib python python-pip lua go neovim qtile python-xlib lightdm lightdm-slick-greeter plymouth picom udiskie pulseaudio xorg-server xorg-xrandr autorandr docker docker-compose xclip nftables reflector
 paru -S qtile-extras dcron nvm rofi-greenclip
 
 echo "Installing node (version 20) and pnpm..."
@@ -47,7 +47,7 @@ sudo systemctl enable dcron.service
 
 ## Applications
 echo "Installing CLI applications..."
-sudo pacman -S fastfetch starship less curl wget btop openssh rsync stow fzf playerctl bat lazygit starship zoxide thefuck ffmpeg yt-dlp termdown ncdu unzip zip tar screen ueberzugpp silicon
+sudo pacman -S fastfetch starship less curl wget btop openssh rsync stow fzf playerctl bat lazygit starship zoxide thefuck ffmpeg yt-dlp termdown ncdu unzip zip tar screen ueberzugpp silicon tree-sitter-cli
 paru -S pfetch-rs pulseaudio-ctl cava brillo unimatrix
 
 echo "Installing GUI applications..."
@@ -95,10 +95,20 @@ sudo cp misc/images/lockscreen-wallpaper.jpg /usr/share/pixmaps/lockscreen-wallp
 sudo chown root:root /usr/share/pixmaps/jigglypuff.jpg /usr/share/pixmaps/lockscreen-wallpaper.jpg
 sudo chmod 644 /usr/share/pixmaps/jigglypuff.jpg /usr/share/pixmaps/lockscreen-wallpaper.jpg
 
-## /etc/lightdm/lightdm-gtk-greeter.conf
-sudo cp misc/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
-sudo chown root:root /etc/lightdm/lightdm-gtk-greeter.conf
-sudo chmod 644 /etc/lightdm/lightdm-gtk-greeter.conf
+# ## /etc/lightdm/lightdm-gtk-greeter.conf
+# sudo cp misc/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
+# sudo chown root:root /etc/lightdm/lightdm-gtk-greeter.conf
+# sudo chmod 644 /etc/lightdm/lightdm-gtk-greeter.conf
+
+## /etc/lightdm/slick-greeter.conf
+sudo cp misc/slick-greeter.conf /etc/lightdm/slick-greeter.conf
+sudo chown root:root /etc/lightdm/slick-greeter.conf
+sudo chmod 644 /etc/lightdm/slick-greeter.conf
+
+## /etc/lightdm/lightdm.conf
+sudo cp misc/lightdm.conf /etc/lightdm/lightdm.conf
+sudo chown root:root /etc/lightdm/lightdm.conf
+sudo chmod 644 /etc/lightdm/lightdm.conf
 
 ## /root/.bashrc
 sudo cp misc/root-bashrc /root/.bashrc
