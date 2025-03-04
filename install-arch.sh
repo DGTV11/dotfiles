@@ -17,7 +17,7 @@ cd /tmp/workdir
 # Install packages
 ## AUR Helper
 echo "Installing rustup and sccache"
-sudo pacman -S rustup sccache
+yes | sudo pacman -S rustup sccache
 rustup default stable
 
 echo "Installing AUR helper..."
@@ -29,7 +29,7 @@ rm -rf paru
 
 ## Basic packages
 echo "Installing basic packages..."
-sudo pacman -S pacman-contrib python python-pip lua go neovim qtile python-xlib lightdm lightdm-slick-greeter plymouth picom udiskie pulseaudio xorg-server xorg-xrandr autorandr docker docker-compose xclip nftables reflector
+yes | sudo pacman -S pacman-contrib python python-pip lua go neovim qtile python-xlib lightdm lightdm-slick-greeter plymouth picom udiskie pulseaudio xorg-server xorg-xrandr autorandr docker docker-compose xclip nftables reflector
 paru -S qtile-extras dcron nvm rofi-greenclip
 
 echo "Installing node (version 20) and pnpm..."
@@ -47,19 +47,19 @@ sudo systemctl enable dcron.service
 
 ## Applications
 echo "Installing CLI applications..."
-sudo pacman -S fastfetch starship less curl wget btop openssh rsync stow fzf playerctl bat lazygit starship zoxide thefuck ffmpeg yt-dlp termdown ncdu unzip zip tar screen ueberzugpp silicon tree-sitter-cli
+yes | sudo pacman -S fastfetch starship less curl wget btop openssh rsync stow fzf playerctl bat lazygit starship zoxide thefuck ffmpeg yt-dlp termdown ncdu unzip zip tar screen ueberzugpp silicon tree-sitter-cli
 paru -S pfetch-rs pulseaudio-ctl cava brillo unimatrix
 
 echo "Installing GUI applications..."
-sudo pacman -S alacritty rofi firefox qutebrowser workrave obsidian thunar solanum discord libreoffice flameshot imagemagick xournalpp virt-manager
+yes | sudo pacman -S alacritty rofi firefox qutebrowser workrave obsidian thunar solanum discord libreoffice flameshot imagemagick xournalpp virt-manager
 paru -S wasistlos rofimoji llpp klogg anki
 
 ## Themes & fonts
 echo "Installing themes and fonts..."
-sudo pacman -S ttf-jetbrains-mono-nerd ttf-space-mono-nerd noto-fonts-cjk noto-fonts-emoji
+yes | sudo pacman -S ttf-jetbrains-mono-nerd ttf-space-mono-nerd noto-fonts-cjk noto-fonts-emoji
 paru -S phinger-cursors ttf-ubraille ttf-ms-win11-auto ttf-adobe-kaiti
 
-sudo pacman -S sassc gtk-engine-murrine gnome-themes-extra
+yes | sudo pacman -S sassc gtk-engine-murrine gnome-themes-extra
 git clone https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme.git
 cd Catppuccin-GTK-Theme
 sudo themes/install.sh --dest /usr/share/themes --name Catppuccin-B-MB
@@ -68,7 +68,7 @@ rm -rf Catppuccin-GTK-Theme
 
 ## Formatters
 echo "Installing code formatters"
-sudo pacman -S python-black python-isort prettier
+yes | sudo pacman -S python-black python-isort prettier
 git clone https://github.com/moorereason/mdfmt.git
 cd mdfmt
 go install
@@ -77,7 +77,7 @@ rm -rf mdfmt
 
 ## Python packages
 echo "Installing Python packages..."
-sudo pacman -S sagemath python-pycryptodome python-pwntools python-psutil
+yes | sudo pacman -S sagemath python-pycryptodome python-pwntools python-psutil
 paru -S python-pulsectl-asyncio
 
 # Configure system
