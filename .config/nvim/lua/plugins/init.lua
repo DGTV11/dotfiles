@@ -10,7 +10,6 @@ return {
     cmd = { "ConformInfo" },
     keys = {
       {
-        -- Customize or remove this keymap to your liking
         "<leader>f",
         function()
           require("conform").format({ async = true })
@@ -18,6 +17,8 @@ return {
         mode = "",
         desc = "Format buffer",
       },
+
+
     },
     -- This will provide type hinting with LuaLS
     ---@module "conform"
@@ -109,7 +110,8 @@ return {
         "rust",
         "c",
         "cpp",
-        "bash"
+        "bash",
+        "latex"
       }
     }
   },
@@ -212,6 +214,25 @@ return {
       disable_frontmatter = true
 
       -- see below for full list of options 👇
+    }
+  },
+  {
+    'MeanderingProgrammer/render-markdown.nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+    ---@module 'render-markdown'
+    ---@type render.md.UserConfig
+    opts = {},
+    keys = {
+      {
+        "<leader>mr",
+        function()
+          require('render-markdown').toggle()
+        end,
+        mode = "",
+        desc = "Toggle markdown rendering",
+      },
     }
   },
   -- {
@@ -358,7 +379,21 @@ return {
         }
       )
     end
-  }
+  },
+  -- {
+  --   "jbyuki/nabla.nvim",
+  --   lazy = false,
+  --   keys = {
+  --     {
+  --       "<leader>p",
+  --       function()
+  --         require("nabla").popup() -- Customize with popup({border = ...})  : `single` (default), `double`, `rounded`
+  --       end,
+  --       mode = "",
+  --       desc = "Open nabla.nvim floating menu",
+  --     },
+  --   }
+  -- }
   -- {
   --   "rcarriga/nvim-notify"
   -- },
