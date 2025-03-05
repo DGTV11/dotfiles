@@ -119,6 +119,7 @@ alias cat="bat"
 alias neofetch="fastfetch"
 alias cmatrix="/bin/unimatrix"
 alias lg="lazygit"
+alias yz="yazi"
 alias cd="z"
 
 # Utility aliases

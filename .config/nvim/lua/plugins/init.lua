@@ -17,8 +17,6 @@ return {
         mode = "",
         desc = "Format buffer",
       },
-
-
     },
     -- This will provide type hinting with LuaLS
     ---@module "conform"
@@ -229,6 +227,17 @@ return {
         "<leader>mr",
         function()
           require('render-markdown').toggle()
+          {
+            "DreamMaoMao/yazi.nvim",
+            dependencies = {
+              "nvim-telescope/telescope.nvim",
+              "nvim-lua/plenary.nvim",
+            },
+
+            keys = {
+              { "<leader>gy", "<cmd>Yazi<CR>", desc = "Toggle Yazi" },
+            },
+          }
         end,
         mode = "",
         desc = "Toggle markdown rendering",
@@ -379,6 +388,17 @@ return {
         }
       )
     end
+  },
+  {
+    "DreamMaoMao/yazi.nvim",
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+      "nvim-lua/plenary.nvim",
+    },
+
+    keys = {
+      { "<leader>yz", "<cmd>Yazi<CR>", desc = "Toggle Yazi" },
+    },
   },
   -- {
   --   "jbyuki/nabla.nvim",
