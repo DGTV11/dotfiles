@@ -1,5 +1,5 @@
 # dotfiles
-![SigmArch](misc/images/spinner-watermark.png)
+![SigmArch](misc/images/sigmarch.png)
 
 ## Installation from scratch
 ### Arch Linux

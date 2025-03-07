@@ -92,8 +92,9 @@ sudo cp misc/pacman.conf /etc/pacman.conf
 ## /usr/share/pixmaps/
 sudo cp misc/images/jigglypuff.jpg /usr/share/pixmaps/jigglypuff.jpg
 sudo cp misc/images/lockscreen-wallpaper.jpg /usr/share/pixmaps/lockscreen-wallpaper.jpg
-sudo chown root:root /usr/share/pixmaps/jigglypuff.jpg /usr/share/pixmaps/lockscreen-wallpaper.jpg
-sudo chmod 644 /usr/share/pixmaps/jigglypuff.jpg /usr/share/pixmaps/lockscreen-wallpaper.jpg
+sudo cp misc/images/sigmarch.png /usr/share/pixmaps/sigmarch.png
+sudo chown root:root /usr/share/pixmaps/jigglypuff.jpg /usr/share/pixmaps/lockscreen-wallpaper.jpg /usr/share/pixmaps/sigmarch.png
+sudo chmod 644 /usr/share/pixmaps/jigglypuff.jpg /usr/share/pixmaps/lockscreen-wallpaper.jpg /usr/share/pixmaps/sigmarch.png
 
 # ## /etc/lightdm/lightdm-gtk-greeter.conf
 # sudo cp misc/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
@@ -120,7 +121,7 @@ sudo mkdir /usr/share/plymouth/themes/bgrt-alt
 sudo cp -r misc/bgrt-alt.plymouth /usr/share/plymouth/themes/bgrt-alt/bgrt-alt.plymouth
 sudo chown -R root:root /usr/share/plymouth/themes/bgrt-alt
 sudo cp -r /usr/share/plymouth/themes/spinner /usr/share/plymouth/themes/spinner-alt
-sudo cp misc/images/spinner-watermark.png /usr/share/plymouth/themes/spinner-alt/watermark.png
+sudo cp misc/images/sigmarch.png /usr/share/plymouth/themes/spinner-alt/watermark.png
 plymouth-set-default-theme -R bgrt-alt
 
 ## /etc/systemd/system/
