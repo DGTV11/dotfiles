@@ -5,6 +5,10 @@ vim.api.nvim_set_hl(0, "IndentScope", { fg = "#89dceb" })
 
 return {
   {
+    "nvim-tree/nvim-tree.lua",
+    enabled = false
+  },
+  {
     "stevearc/conform.nvim",
     event = { "BufWritePre" },
     cmd = { "ConformInfo" },
@@ -141,6 +145,14 @@ return {
       line_offset = function(args)
         return args.line1
       end
+    },
+    keys = {
+      mode = { "v" },
+      { "<leader>s",  group = "Silicon" },
+      { "<leader>sc", function() require("nvim-silicon").clip() end,  desc = "Copy code screenshot to clipboard" },
+      { "<leader>sf", function() require("nvim-silicon").file() end,  desc = "Save code screenshot as file" },
+      { "<leader>ss", function() require("nvim-silicon").shoot() end, desc = "Create code screenshot" },
+
     }
   },
   {
