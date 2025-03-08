@@ -121,6 +121,7 @@ alias cmatrix="/bin/unimatrix"
 alias lg="lazygit"
 alias yz="yazi"
 alias cd="z"
+alias gdb="gdb-gef"
 
 # Utility aliases
 alias pdf="llpp"
