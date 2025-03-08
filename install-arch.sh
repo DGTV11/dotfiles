@@ -62,7 +62,7 @@ paru -S phinger-cursors ttf-ubraille ttf-ms-win11-auto ttf-adobe-kaiti
 yes | sudo pacman -S sassc gtk-engine-murrine gnome-themes-extra
 git clone https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme.git
 cd Catppuccin-GTK-Theme
-sudo themes/install.sh --dest /usr/share/themes --name Catppuccin-B-MB
+sudo themes/install.sh --dest /usr/share/themes --name Catppuccin
 cd ../
 rm -rf Catppuccin-GTK-Theme
 
