@@ -28,7 +28,8 @@ import os
 import subprocess
 
 from libqtile import bar, hook, qtile
-from libqtile.config import Click, Drag, DropDown, Group, Key, Match, ScratchPad, Screen
+from libqtile.config import (Click, Drag, DropDown, Group, Key, Match,
+                             ScratchPad, Screen)
 from libqtile.lazy import lazy
 from libqtile.scripts.main import VERSION
 from libqtile.utils import guess_terminal
@@ -155,7 +156,7 @@ keys = [
     # Key([mod, "shift"], "t", lazy.spawn("thunar"), desc="Launch Thunar"),
     Key([mod], "t", lazy.spawn("thunar"), desc="Launch Thunar"),
     Key([mod, "shift"], "t", lazy.spawn("teams"), desc="Launch MS Teams"),
-    Key([mod, "shift"], "w", lazy.spawn("wasistlos"), desc="Launch Whatsapp for Linux"),
+    # Key([mod, "shift"], "w", lazy.spawn("wasistlos"), desc="Launch Whatsapp for Linux"),
     Key([mod], "d", lazy.spawn("discord"), desc="Launch Discord"),
     Key([mod, "shift"], "v", lazy.spawn("virt-manager"), desc="Launch virt-manager"),
     # Toggle between different layouts as defined below
@@ -341,6 +342,16 @@ groups = numerical_groups + [
                 opacity=1.0,
                 on_focus_lost_hide=False,
             ),
+            DropDown(
+                "whatsapp",
+                "wasistlos",
+                x=0.1,
+                y=0.1,
+                width=0.8,
+                height=0.8,
+                opacity=1.0,
+                on_focus_lost_hide=False,
+            ),
         ],
         single=True,
     )
@@ -389,6 +400,12 @@ keys.extend(
             "j",
             lazy.group["scratchpad"].dropdown_toggle("music"),
             desc="Toggle Supersonic in scratchpad",
+        ),
+        Key(
+            [mod, "shift"],
+            "w",
+            lazy.group["scratchpad"].dropdown_toggle("whatsapp"),
+            desc="Launch Whatsapp for Linux in scratchpad",
         ),
     ]
 )
