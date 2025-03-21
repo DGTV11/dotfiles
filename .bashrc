@@ -120,8 +120,10 @@ alias neofetch="fastfetch"
 alias cmatrix="/bin/unimatrix"
 alias lg="lazygit"
 alias yz="yazi"
+alias om="oatmeal"
 alias cd="z"
-alias gdb="gdb-gef"
+alias gdb="gdb-pwndbg"
+alias checksec="pwn checksec"
 
 # Utility aliases
 alias pdf="llpp"
