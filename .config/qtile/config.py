@@ -28,8 +28,7 @@ import os
 import subprocess
 
 from libqtile import bar, hook, qtile
-from libqtile.config import (Click, Drag, DropDown, Group, Key, Match,
-                             ScratchPad, Screen)
+from libqtile.config import Click, Drag, DropDown, Group, Key, Match, ScratchPad, Screen
 from libqtile.lazy import lazy
 from libqtile.scripts.main import VERSION
 from libqtile.utils import guess_terminal
@@ -433,7 +432,8 @@ layouts = [
     # layout.TreeTab(),
     # layout.VerticalTile(),
     # layout.Zoomy(),
-    layout.Spiral(**layout_theme, ratio=0.5, new_client_position="after_current"),
+    # layout.Spiral(**layout_theme, ratio=0.5, new_client_position="after_current"),
+    layout.Spiral(**layout_theme, new_client_position="after_current"),
 ]
 
 from libqtile.utils import send_notification
