@@ -225,6 +225,13 @@ keys = [
         lazy.function(window_to_previous_screen, switch_screen=True),
         desc="Move window to previous screen and switch focus to it",
     ),
+    Key(
+        [mod],
+        "l",
+        # lazy.function(toggle_golden_ratio),
+        lazy.next_layout(),
+        desc="Toggle layout",
+    ),
     Key([mod], "comma", lazy.next_screen(), desc="Switch focus to the next screen"),
     Key(
         [mod], "period", lazy.prev_screen(), desc="Switch focus to the previous screen"
@@ -432,8 +439,8 @@ layouts = [
     # layout.TreeTab(),
     # layout.VerticalTile(),
     # layout.Zoomy(),
-    # layout.Spiral(**layout_theme, ratio=0.5, new_client_position="after_current"),
     layout.Spiral(**layout_theme, new_client_position="after_current"),
+    layout.Spiral(**layout_theme, ratio=0.5, new_client_position="after_current"),
 ]
 
 from libqtile.utils import send_notification
