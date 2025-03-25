@@ -126,12 +126,12 @@ keys = [
     # Split = all windows displayed
     # Unsplit = 1 window displayed, like Max layout, but still with
     # multiple stack panes
-    Key(
-        [mod, "shift"],
-        "Return",
-        lazy.layout.toggle_split(),
-        desc="Toggle between split and unsplmakeit sides of stack",
-    ),
+    # Key(
+    #     [mod, "shift"],
+    #     "Return",
+    #     lazy.layout.toggle_split(),
+    #     desc="Toggle between split and unsplmakeit sides of stack",
+    # ),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "b", lazy.spawn("qutebrowser"), desc="Launch Qutebrowser"),
     Key([mod, "shift"], "b", lazy.spawn("firefox"), desc="Launch Firefox"),
@@ -226,7 +226,7 @@ keys = [
         desc="Move window to previous screen and switch focus to it",
     ),
     Key(
-        [mod],
+        [mod, "control"],
         "l",
         # lazy.function(toggle_golden_ratio),
         lazy.next_layout(),
