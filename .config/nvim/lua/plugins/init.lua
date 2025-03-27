@@ -238,17 +238,6 @@ return {
         "<leader>mr",
         function()
           require('render-markdown').toggle()
-          {
-            "DreamMaoMao/yazi.nvim",
-            dependencies = {
-              "nvim-telescope/telescope.nvim",
-              "nvim-lua/plenary.nvim",
-            },
-
-            keys = {
-              { "<leader>gy", "<cmd>Yazi<CR>", desc = "Toggle Yazi" },
-            },
-          }
         end,
         mode = "",
         desc = "Toggle markdown rendering",
@@ -427,5 +416,16 @@ return {
   -- }
   -- {
   --   "rcarriga/nvim-notify"
+  -- },
+
+  -- {
+  --   'kiran94/edit-markdown-table.nvim',
+  --   config = true,
+  --   dependencies = { "nvim-treesitter/nvim-treesitter" },
+  --   cmd = "EditMarkdownTable",
+  --   keys = {
+  --     { "<leader>mt", "<cmd>EditMarkdownTable<CR>", desc = "Edit Markdown Table" },
+  --   },
+  --
   -- },
 }
