@@ -533,6 +533,19 @@ def primary_top_bar():
             #     ],
             # ),
             separator(),
+            widget.Wallpaper(
+                font="JetBrains Mono NL NF",
+                fontsize=14,
+                padding=10,
+                directory=WALLPAPER_DIR,
+                wallpaper="cloudy-quasar-catppuccin-mocha",
+                random_selection=True,
+                wallpaper_command=None,
+                decorations=[
+                    rect_decor(),
+                ],
+            ),
+            separator(),
             widget.Spacer(),
             widget.WindowName(
                 scroll=True,
@@ -732,13 +745,15 @@ def secondary_top_bar(monitor_num):
 # https://raw.githubusercontent.com/42willow/walls-bak/refs/heads/main/dist/Mocha/Kurzgesagt-Cloudy_Quasar_1.png
 
 WALLPAPER_PATH = (
-    f"/home/{os.getlogin()}/.config/qtile/cloudy-quasar-catppuccin-mocha.png"
+    f"/home/{os.getlogin()}/.config/qtile/wallpapers/cloudy-quasar-catppuccin-mocha.png"
 )
+
+WALLPAPER_DIR = f"/home/{os.getlogin()}/.config/qtile/wallpapers/"
 
 screens = [
     Screen(
-        wallpaper=WALLPAPER_PATH,
-        wallpaper_mode="fill",
+        # wallpaper=WALLPAPER_PATH,
+        # wallpaper_mode="fill",
         top=primary_top_bar(),
     ),
 ]
@@ -748,8 +763,8 @@ if num_monitors > 1:
     for m in range(num_monitors - 1):
         screens.append(
             Screen(
-                wallpaper=WALLPAPER_PATH,
-                wallpaper_mode="fill",
+                # wallpaper=WALLPAPER_PATH,
+                # wallpaper_mode="fill",
                 top=secondary_top_bar(m + 2),
             ),
         )
