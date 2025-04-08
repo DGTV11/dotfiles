@@ -124,6 +124,7 @@ alias om="oatmeal"
 alias cd="z"
 alias gdb="gdb-pwndbg"
 alias checksec="pwn checksec"
+alias su="echo 'use \"sudo -s\"'"
 
 # Utility aliases
 alias pdf="llpp"
