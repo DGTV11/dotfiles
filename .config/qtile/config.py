@@ -663,6 +663,19 @@ def secondary_top_bar(monitor_num):
             #     ],
             # ),
             separator(),
+            widget.Wallpaper(
+                font="JetBrains Mono NL NF",
+                fontsize=14,
+                padding=10,
+                directory=WALLPAPER_DIR,
+                wallpaper="cloudy-quasar-catppuccin-mocha",
+                random_selection=True,
+                wallpaper_command=None,
+                decorations=[
+                    rect_decor(),
+                ],
+            ),
+            separator(),
             widget.Spacer(),
             widget.WindowName(
                 scroll=True,
