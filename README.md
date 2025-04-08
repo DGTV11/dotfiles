@@ -128,6 +128,12 @@ $ ./install-arch.sh
 
 23) Add `plymouth` hook to initramfs (then run `mkinitcpio -P`)
 
+24) Lock down root account
+```bash
+$ sudo usermod root --shell /sbin/nologin
+$ sudo passwd --lock root
+```
+
 24) Reboot the system again
 
 25) Enjoy your new system
