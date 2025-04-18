@@ -539,7 +539,7 @@ def primary_top_bar():
                 padding=10,
                 directory=WALLPAPER_DIR,
                 wallpaper="cloudy-quasar-catppuccin-mocha",
-                random_selection=True,
+                # random_selection=True,
                 wallpaper_command=None,
                 decorations=[
                     rect_decor(),
@@ -669,7 +669,7 @@ def secondary_top_bar(monitor_num):
                 padding=10,
                 directory=WALLPAPER_DIR,
                 wallpaper="cloudy-quasar-catppuccin-mocha",
-                random_selection=True,
+                # random_selection=True,
                 wallpaper_command=None,
                 decorations=[
                     rect_decor(),

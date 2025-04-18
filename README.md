@@ -141,3 +141,4 @@ $ sudo passwd --lock root
 ## Attribution
 - Atom icon by nawicon (https://www.freepik.com/icon/atom_5310935)
 - Arch installation guide modified from Sawntoe's guide and official Arch install guide (https://gist.github.com/sawntoe/de38953fb367e87417e399f13ad3353f, https://wiki.archlinux.org/title/Installation_guide)
+- "Some Minecraft screenshot I took with Distant Horizons on and a bee that decided to make the image a thousand times better" (https://www.reddit.com/r/wallpapers/comments/1cndtua/some_minecraft_screenshot_i_took_with_distant/)

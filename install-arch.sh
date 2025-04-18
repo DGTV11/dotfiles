@@ -47,12 +47,12 @@ sudo systemctl enable dcron.service
 
 ## Applications
 echo "Installing CLI applications..."
-yes | sudo pacman -S fastfetch starship less curl wget btop openssh rsync stow fzf playerctl bat lazygit yazi starship zoxide thefuck ffmpeg yt-dlp termdown ncdu unzip zip tar screen ueberzugpp silicon tree-sitter-cli
+yes | sudo pacman -S fastfetch starship less curl wget btop openssh rsync stow fzf playerctl bat lazygit yazi starship zoxide thefuck ffmpeg yt-dlp termdown ncdu unzip zip tar screen ueberzugpp silicon tree-sitter-cli axel
 paru -S pfetch-rs pulseaudio-ctl cava brillo unimatrix
 
 echo "Installing GUI applications..."
 yes | sudo pacman -S alacritty rofi firefox qutebrowser workrave obsidian thunar solanum discord libreoffice flameshot imagemagick xournalpp virt-manager
-paru -S wasistlos rofimoji llpp klogg anki
+paru -S wasistlos rofimoji llpp klogg anki curseforge
 
 ## Themes & fonts
 echo "Installing themes and fonts..."
@@ -86,6 +86,11 @@ echo "Configuring system..."
 ## Move into dotfiles directory
 cd $HOME/dotfiles
 
+## Wallpapers
+axel https://i.redd.it/2ksegq0ad9zc1.png -o .config/qtile/wallpapers/distant-horizons-wallpaper-with-bee.png
+axel https://i.redd.it/n105zgebijoc1.png -o .config/qtile/wallpapers/distant-horizons-wallpaper-vanillagen.png
+cp misc/images/cloudy-quasar-catppuccin-mocha.png .config/qtile/wallpapers/cloudy-quasar-catppuccin-mocha.png
+cp misc/images/two-miffy-and-jigglypuff.png .config/qtile/wallpapers/two-miffy-and-jigglypuff.png
 ## /etc/pacman.conf
 sudo cp misc/pacman.conf /etc/pacman.conf
 
@@ -136,7 +141,7 @@ sudo chown root:root /etc/systemd/system/paccache.timer /etc/systemd/system/pacc
 sudo systemctl enable paccache.timer reflector.timer
 
 ## /usr/local/bin/
-wget --output-document /tmp/workdir/manpager.c https://gitweb.gentoo.org/repo/gentoo.git/plain/app-text/manpager/files/manpager.c
+axel https://gitweb.gentoo.org/repo/gentoo.git/plain/app-text/manpager/files/manpager.c -o /tmp/workdir/manpager.c
 sudo gcc /tmp/workdir/manpager.c -o /usr/local/bin/manpager
 
 ## /etc/sudoers
