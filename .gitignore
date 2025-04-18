@@ -219,4 +219,4 @@ pyrightconfig.json
 
 *.log
 .config/gtk-3.0/bookmarks
-# .config/qtile/wallpapers/*
+.config/qtile/wallpapers/*
