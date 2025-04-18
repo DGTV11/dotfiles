@@ -538,7 +538,7 @@ def primary_top_bar():
                 fontsize=14,
                 padding=10,
                 directory=WALLPAPER_DIR,
-                wallpaper="cloudy-quasar-catppuccin-mocha",
+                # wallpaper="cloudy-quasar-catppuccin-mocha",
                 # random_selection=True,
                 wallpaper_command=None,
                 decorations=[
@@ -668,7 +668,7 @@ def secondary_top_bar(monitor_num):
                 fontsize=14,
                 padding=10,
                 directory=WALLPAPER_DIR,
-                wallpaper="cloudy-quasar-catppuccin-mocha",
+                # wallpaper="cloudy-quasar-catppuccin-mocha",
                 # random_selection=True,
                 wallpaper_command=None,
                 decorations=[
