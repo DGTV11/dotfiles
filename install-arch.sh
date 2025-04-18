@@ -94,7 +94,7 @@ cp misc/images/cloudy-quasar-catppuccin-mocha.png .config/qtile/wallpapers/cloud
 cp misc/images/two-miffy-and-jigglypuff.png .config/qtile/wallpapers/two-miffy-and-jigglypuff.png
 cp misc/images/near-starter-base-freedom-smp.png .config/qtile/wallpapers/near-starter-base-freedom-smp.png
 cp misc/images/near-mesa-biome-freedom-smp.png .config/qtile/wallpapers/near-mesa-biome-freedom-smp.png
-
+cp misc/images/mountain-view-1-freedom-smp.png .config/qtile/wallpapers/mountain-view-1-freedom-smp.png
 ## /etc/pacman.conf
 sudo cp misc/pacman.conf /etc/pacman.conf
 
