@@ -87,10 +87,14 @@ echo "Configuring system..."
 cd $HOME/dotfiles
 
 ## Wallpapers
+mkdir .config/qtile/wallpapers
 axel https://i.redd.it/2ksegq0ad9zc1.png -o .config/qtile/wallpapers/distant-horizons-wallpaper-with-bee.png
 axel https://i.redd.it/n105zgebijoc1.png -o .config/qtile/wallpapers/distant-horizons-wallpaper-vanillagen.png
 cp misc/images/cloudy-quasar-catppuccin-mocha.png .config/qtile/wallpapers/cloudy-quasar-catppuccin-mocha.png
 cp misc/images/two-miffy-and-jigglypuff.png .config/qtile/wallpapers/two-miffy-and-jigglypuff.png
+cp misc/images/near-starter-base-freedom-smp.png .config/qtile/wallpapers/near-starter-base-freedom-smp.png
+cp misc/images/near-mesa-biome-freedom-smp.png .config/qtile/wallpapers/near-mesa-biome-freedom-smp.png
+
 ## /etc/pacman.conf
 sudo cp misc/pacman.conf /etc/pacman.conf
 
