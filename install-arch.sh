@@ -100,6 +100,8 @@ cp misc/images/near-mesa-biome-freedom-smp.png .config/qtile/wallpapers/near-mes
 cp misc/images/mountain-view-1-freedom-smp.png .config/qtile/wallpapers/mountain-view-1-freedom-smp.png
 cp misc/images/mountain-view-2-freedom-smp.png .config/qtile/wallpapers/mountain-view-2-freedom-smp.png
 cp misc/images/mountain-view-3-freedom-smp.png .config/qtile/wallpapers/mountain-view-3-freedom-smp.png
+cp misc/images/mountain-base-1-freedom-smp.png .config/qtile/wallpapers/mountain-base-1-freedom-smp.png
+cp misc/images/mountain-base-2-freedom-smp.png .config/qtile/wallpapers/mountain-base-2-freedom-smp.png
 
 ## /etc/pacman.conf
 sudo cp misc/pacman.conf /etc/pacman.conf
