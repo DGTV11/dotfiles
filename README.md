@@ -20,6 +20,9 @@
 ```
 4) Partition disks using `lsblk` and `cfdisk`
 
+> [!NOTE] Swap partition not strictly necessary
+> If you decide not to make a swap partition, please adjust steps 5 and 6 accordingly
+
 | Mount point on the installed system | Partition | Partition type | Suggested size |
 | --- | --- | --- | --- |
 | /boot | /dev/efi_system_partition | EFI system partition | 512MiB-1 GiB |
@@ -49,8 +52,10 @@
 
 8) Bootstrap system
 ```bash
-# pacstrap -K /mnt base base-devel linux-zen linux-firmware sof-firmware sof-tools <grub or another bootloader> efibootmgr net-tools networkmanager neovim git
+# pacstrap -K /mnt base base-devel linux-zen linux-firmware sof-firmware sof-tools grub efibootmgr net-tools networkmanager neovim git
 ```
+
+> [!NOTE] If you choose not to use GRUB, please adjust your bootloader installation as necessary
 
 9) Generate fstab and verify it
 ```bash
@@ -93,6 +98,7 @@
 ```
 
 16) Uncomment the line `%wheel ALL=(ALL) NOPASSWD: ALL` in /etc/sudoers
+> [!NOTE] If this is concerning uncomment the line `%wheel ALL=(ALL) ALL` instead 
 - Run the below command:
 ```bash
 # EDITOR=nvim visudo
@@ -111,7 +117,7 @@
 
 19) Reboot and log into regular user
 
-> NOTE: the next steps are EXPERIMENTAL and are NOT guaranteed to work!
+> [!NOTE] the next steps are EXPERIMENTAL and are NOT guaranteed to work!
 
 20) Clone dotfiles repository
 ```bash
