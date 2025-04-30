@@ -1,9 +1,30 @@
+vim.opt.termguicolors = true
+
 package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?/init.lua"
 package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?.lua"
 
 vim.api.nvim_set_hl(0, "IndentScope", { fg = "#89dceb" })
 
 return {
+  {
+    "rcarriga/nvim-notify",
+    lazy = false,    -- load immediately (or set to true on an event you like)
+    priority = 1000, -- make sure it loads before other plugins that call vim.notify
+    config = function()
+      -- 2. Configure nvim-notify
+      require("notify").setup({
+        -- Animation style: "fade", "slide", "fade_in_slide_out", "static", etc.
+        stages            = "fade_in_slide_out",
+        timeout           = 2000,      -- milliseconds before notification disappears
+        background_colour = "#000000", -- window background (can be a highlight name)
+        render            = "default", -- layout style: "minimal", "compact", "wrapped", etc.
+        top_down          = true,      -- put newest on top
+      })
+
+      -- 3. Override the default notify function
+      vim.notify = require("notify")
+    end,
+  },
   {
     "nvim-tree/nvim-tree.lua",
     enabled = false
@@ -151,7 +172,6 @@ return {
       { "<leader>sc", function() require("nvim-silicon").clip() end,  desc = "Copy code screenshot to clipboard" },
       { "<leader>sf", function() require("nvim-silicon").file() end,  desc = "Save code screenshot as file" },
       { "<leader>ss", function() require("nvim-silicon").shoot() end, desc = "Create code screenshot" },
-
     }
   },
   {
@@ -422,10 +442,6 @@ return {
   --     },
   --   }
   -- }
-  -- {
-  --   "rcarriga/nvim-notify"
-  -- },
-
   -- {
   --   'kiran94/edit-markdown-table.nvim',
   --   config = true,
