@@ -22,3 +22,6 @@ gui:
 
   authorColors:
     '*': '#b4befe'
+
+git:
+  autoForwardBranches: none

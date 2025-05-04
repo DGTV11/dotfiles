@@ -29,3 +29,8 @@ fi
 # Created by `pipx` on 2024-06-09 01:42:16
 export PATH="$PATH:/home/danielwee/.local/bin"
 . "$HOME/.cargo/env"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/danielwee/.lmstudio/bin"
+# End of LM Studio CLI section
+

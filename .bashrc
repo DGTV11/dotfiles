@@ -215,3 +215,8 @@ if [ "$(tput cols)" -lt 80 ]; then
 else
     neofetch
 fi
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/danielwee/.lmstudio/bin"
+# End of LM Studio CLI section
+
