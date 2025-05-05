@@ -28,7 +28,8 @@ import os
 import subprocess
 
 from libqtile import bar, hook, qtile
-from libqtile.config import Click, Drag, DropDown, Group, Key, Match, ScratchPad, Screen
+from libqtile.config import (Click, Drag, DropDown, Group, Key, Match,
+                             ScratchPad, Screen)
 from libqtile.lazy import lazy
 from libqtile.scripts.main import VERSION
 from libqtile.utils import guess_terminal
@@ -517,6 +518,7 @@ def primary_top_bar():
                 active="#c3cdd9",
                 inactive="#7c7c7c",
                 highlight_method="block",
+                disable_drag = True,
                 this_current_screen_border="#7aa2f7",
                 decorations=[
                     rect_decor(),
@@ -650,6 +652,7 @@ def secondary_top_bar(monitor_num):
                 active="#c3cdd9",
                 inactive="#7c7c7c",
                 highlight_method="block",
+                disable_drag = True,
                 this_current_screen_border="#7aa2f7",
                 decorations=[
                     rect_decor(),
