@@ -54,7 +54,7 @@ paru -S pfetch-rs pulseaudio-ctl cava brillo unimatrix
 
 echo "Installing GUI applications..."
 yes | sudo pacman -S alacritty rofi firefox qutebrowser workrave obsidian thunar solanum discord libreoffice flameshot imagemagick xournalpp virt-manager blueman
-paru -S wasistlos rofimoji llpp klogg anki curseforge
+paru -S wasistlos rofimoji llpp klogg anki modrinth-app
 
 ## Themes & fonts
 echo "Installing themes and fonts..."
@@ -102,6 +102,9 @@ cp misc/images/near-mesa-biome-freedom-smp.png .config/qtile/wallpapers/near-mes
 cp misc/images/mountain-view-1-freedom-smp.png .config/qtile/wallpapers/mountain-view-1-freedom-smp.png
 cp misc/images/mountain-view-2-freedom-smp.png .config/qtile/wallpapers/mountain-view-2-freedom-smp.png
 cp misc/images/mountain-view-3-freedom-smp.png .config/qtile/wallpapers/mountain-view-3-freedom-smp.png
+cp misc/images/mountain-view-4-freedom-smp.png .config/qtile/wallpapers/mountain-view-4-freedom-smp.png
+cp misc/images/mountain-view-5-freedom-smp.png .config/qtile/wallpapers/mountain-view-5-freedom-smp.png
+
 cp misc/images/mountain-base-1-freedom-smp.png .config/qtile/wallpapers/mountain-base-1-freedom-smp.png
 cp misc/images/mountain-base-2-freedom-smp.png .config/qtile/wallpapers/mountain-base-2-freedom-smp.png
 
