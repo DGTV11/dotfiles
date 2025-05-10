@@ -54,6 +54,7 @@ return {
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
         javascript = { "prettier" },
         -- markdown = { "markdownfmt" }
+        go = { "gofmt" }
       },
       -- Set default options
       default_format_opts = {
