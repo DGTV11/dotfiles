@@ -108,6 +108,7 @@ cp misc/images/mountain-view-6-freedom-smp.png .config/qtile/wallpapers/mountain
 cp misc/images/mountain-view-7-freedom-smp.png .config/qtile/wallpapers/mountain-view-7-freedom-smp.png
 cp misc/images/mountain-base-1-freedom-smp.png .config/qtile/wallpapers/mountain-base-1-freedom-smp.png
 cp misc/images/mountain-base-2-freedom-smp.png .config/qtile/wallpapers/mountain-base-2-freedom-smp.png
+cp misc/images/mountain-base-3-freedom-smp.png .config/qtile/wallpapers/mountain-base-3-freedom-smp.png
 
 ## /etc/pacman.conf
 sudo cp misc/pacman.conf /etc/pacman.conf
