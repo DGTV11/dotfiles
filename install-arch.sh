@@ -110,6 +110,9 @@ cp misc/images/mountain-base-1-freedom-smp.png .config/qtile/wallpapers/mountain
 cp misc/images/mountain-base-2-freedom-smp.png .config/qtile/wallpapers/mountain-base-2-freedom-smp.png
 cp misc/images/mountain-base-3-freedom-smp.png .config/qtile/wallpapers/mountain-base-3-freedom-smp.png
 cp misc/images/mountain-base-4-freedom-smp.png .config/qtile/wallpapers/mountain-base-4-freedom-smp.png
+cp misc/images/snowy-place-day-freedom-smp.png .config/qtile/wallpapers/snowy-place-day-freedom-smp.png
+cp misc/images/snowy-place-evening-freedom-smp.png .config/qtile/wallpapers/snowy-place-evening-freedom-smp.png
+cp misc/images/snowy-place-night-freedom-smp.png .config/qtile/wallpapers/snowy-place-night-freedom-smp.png
 
 ## /etc/pacman.conf
 sudo cp misc/pacman.conf /etc/pacman.conf
