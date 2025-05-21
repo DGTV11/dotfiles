@@ -139,6 +139,7 @@ alias q="exit"
 alias sn="shutdown -h now"
 alias office="libreoffice"
 alias ytdown="yt-dlp --embed-thumbnail -f bestaudio -x --audio-format mp3 --audio-quality 0"
+alias minikube-start="minikube start --driver=qemu --qemu-firmware-path=/usr/share/qemu"
 # alias rpivpn="sudo openvpn --config /etc/openvpn/openvpn.conf"
 
 # Alert for long running commands
