@@ -53,8 +53,8 @@ yes | sudo pacman -S fastfetch starship less curl wget btop openssh rsync stow f
 paru -S pfetch-rs pulseaudio-ctl cava brillo unimatrix
 
 echo "Installing GUI applications..."
-yes | sudo pacman -S alacritty rofi firefox qutebrowser workrave obsidian thunar solanum discord libreoffice flameshot imagemagick xournalpp virt-manager blueman
-paru -S wasistlos rofimoji llpp klogg anki modrinth-app
+yes | sudo pacman -S alacritty rofi firefox qutebrowser workrave obsidian thunar solanum discord libreoffice flameshot imagemagick xournalpp virt-manager blueman prismlauncher
+paru -S wasistlos rofimoji llpp klogg anki
 
 ## Themes & fonts
 echo "Installing themes and fonts..."
@@ -67,6 +67,12 @@ cd Catppuccin-GTK-Theme
 sudo themes/install.sh --dest /usr/share/themes --name Catppuccin
 cd ../
 rm -rf Catppuccin-GTK-Theme
+
+axel https://github.com/PrismLauncher/Themes/releases/download/2025-05-25_1748167007/Catppuccin-Mocha-theme.zip -o /home/danielwee/.local/share/PrismLauncher/themes/Catppuccin-Mocha-theme.zip
+unzip /home/danielwee/.local/share/PrismLauncher/themes/Catppuccin-Mocha-theme.zip -d /home/danielwee/.local/share/PrismLauncher/themes/
+mv /home/danielwee/.local/share/PrismLauncher/themes/themes/** /home/danielwee/.local/share/PrismLauncher/themes/
+rm /home/danielwee/.local/share/PrismLauncher/themes/Catppuccin-Mocha-theme.zip /home/danielwee/.local/share/PrismLauncher/themes/themes/
+
 
 ## Formatters
 echo "Installing code formatters"
