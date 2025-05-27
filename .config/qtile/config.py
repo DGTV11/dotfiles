@@ -158,7 +158,8 @@ keys = [
     # Key([mod, "shift"], "w", lazy.spawn("wasistlos"), desc="Launch Whatsapp for Linux"),
     Key([mod], "d", lazy.spawn("discord"), desc="Launch Discord"),
     Key([mod, "shift"], "v", lazy.spawn("virt-manager"), desc="Launch virt-manager"),
-    Key([mod], "m", lazy.spawn("modrinth-app"), desc="Launch Modrinth App"),
+    # Key([mod], "m", lazy.spawn("modrinth-app"), desc="Launch Modrinth App"),
+    Key([mod], "p", lazy.spawn("prismlauncher"), desc="Launch Prism Launcher"),
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
