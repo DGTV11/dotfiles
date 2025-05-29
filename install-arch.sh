@@ -98,6 +98,7 @@ cd $HOME/dotfiles
 mkdir .config/qtile/wallpapers
 axel https://i.redd.it/2ksegq0ad9zc1.png -o .config/qtile/wallpapers/distant-horizons-wallpaper-with-bee.png
 axel https://i.redd.it/n105zgebijoc1.png -o .config/qtile/wallpapers/distant-horizons-wallpaper-vanillagen.png
+cp misc/images/distant-horizons-wallpaper-terralith-tectonic.png .config/qtile/wallpapers/distant-horizons-wallpaper-terralith-tectonic.png
 cp misc/images/cloudy-quasar-catppuccin-mocha.png .config/qtile/wallpapers/cloudy-quasar-catppuccin-mocha.png
 cp misc/images/two-miffy-and-jigglypuff.png .config/qtile/wallpapers/two-miffy-and-jigglypuff.png
 cp misc/images/near-starter-base-1-freedom-smp.png .config/qtile/wallpapers/near-starter-base-1-freedom-smp.png
