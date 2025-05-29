@@ -52,7 +52,7 @@ class SortedWallpaper(base._TextBox):
 
     def __init__(self, **config):
         base._TextBox.__init__(self, "empty", **config)
-        self.add_defaults(Wallpaper.defaults)
+        self.add_defaults(SortedWallpaper.defaults)
         self.index = 0
         self.images = []
         self.get_wallpapers()
