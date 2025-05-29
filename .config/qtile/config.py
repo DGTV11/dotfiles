@@ -36,6 +36,8 @@ from qtile_extras import layout, widget
 from qtile_extras.layout.decorations import ScreenGradientBorder
 from qtile_extras.widget.decorations import PowerLineDecoration, RectDecoration
 
+import custom_widgets
+
 mod = "mod4"
 # terminal = guess_terminal()
 terminal = "alacritty"
@@ -536,7 +538,7 @@ def primary_top_bar():
             #     ],
             # ),
             separator(),
-            widget.Wallpaper(
+            custom_widgets.SortedWallpaper(
                 font="JetBrains Mono NL NF",
                 fontsize=14,
                 padding=10,
@@ -671,7 +673,7 @@ def secondary_top_bar(monitor_num):
             #     ],
             # ),
             separator(),
-            widget.Wallpaper(
+            custom_widgets.SortedWallpaper(
                 font="JetBrains Mono NL NF",
                 fontsize=14,
                 padding=10,
