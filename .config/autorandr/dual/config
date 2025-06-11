@@ -16,7 +16,6 @@ x-prop-broadcast_rgb Automatic
 x-prop-colorspace Default
 x-prop-max_bpc 12
 x-prop-non_desktop 0
-x-prop-scaling_mode Full aspect
 output DP-3
 crtc 1
 mode 1920x1080
