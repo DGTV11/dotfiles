@@ -475,8 +475,6 @@ def get_num_monitors():
         return num_monitors
 
 
-num_monitors = get_num_monitors()
-
 widget_defaults = dict(
     font="JetBrains Mono NL NF",
     fontsize=12,
@@ -777,29 +775,49 @@ WALLPAPER_PATH = (
 
 WALLPAPER_DIR = f"/home/{os.getlogin()}/.config/qtile/wallpapers/"
 
+# num_monitors = get_num_monitors()
+# screens = [
+#     Screen(
+#         # wallpaper=WALLPAPER_PATH,
+#         # wallpaper_mode="fill",
+#         top=primary_top_bar(),
+#     ),
+# ]
+#
+#
+# if num_monitors > 1:
+#     for m in range(num_monitors - 1):
+#         screens.append(
+#             Screen(
+#                 # wallpaper=WALLPAPER_PATH,
+#                 # wallpaper_mode="fill",
+#                 top=secondary_top_bar(m + 2),
+#             ),
+#         )
+
 screens = [
-    Screen(
-        # wallpaper=WALLPAPER_PATH,
-        # wallpaper_mode="fill",
-        top=primary_top_bar(),
-    ),
+    Screen(top=primary_top_bar()),
+    Screen(top=secondary_top_bar(2)),
+    Screen(top=secondary_top_bar(3)),
+    Screen(top=secondary_top_bar(4)),
 ]
 
 
-if num_monitors > 1:
-    for m in range(num_monitors - 1):
-        screens.append(
-            Screen(
-                # wallpaper=WALLPAPER_PATH,
-                # wallpaper_mode="fill",
-                top=secondary_top_bar(m + 2),
-            ),
-        )
+# @hook.subscribe.screen_change
+# def restart_on_randr(_):
+#     subprocess.run(["xrandr", "--auto"])
+#     # qtile.reload_config()
 
 
 @hook.subscribe.screen_change
 def restart_on_randr(_):
-    qtile.reload_config()
+    global _last_screen_change
+    now = time.time()
+
+    if now - _last_screen_change > 2:  # 2 second debounce
+        # subprocess.run(["xrandr", "--auto"])
+        qtile.reload_config()
+        _last_screen_change = now
 
 
 # Drag floating layouts.
