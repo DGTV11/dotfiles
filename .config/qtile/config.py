@@ -807,17 +807,31 @@ screens = [
 # def restart_on_randr(_):
 #     subprocess.run(["xrandr", "--auto"])
 #     # qtile.reload_config()
+#
+
+# @hook.subscribe.screen_change
+# def restart_on_randr(_):
+#     global _last_screen_change
+#     now = time.time()
+#
+#     if now - _last_screen_change > 2:  # 2 second debounce
+#         # subprocess.run(["xrandr", "--auto"])
+#         qtile.reload_config()
+#         _last_screen_change = now
 
 
-@hook.subscribe.screen_change
-def restart_on_randr(_):
-    global _last_screen_change
-    now = time.time()
-
-    if now - _last_screen_change > 2:  # 2 second debounce
-        # subprocess.run(["xrandr", "--auto"])
-        qtile.reload_config()
-        _last_screen_change = now
+# def apply_xrandr_delayed():
+#     time.sleep(1.5)  # wait for monitor to fully connect
+#     subprocess.run(["autorandr --change"])
+#
+#
+# @hook.subscribe.screen_change
+# def restart_on_randr(_):
+#     global _last_screen_change
+#     now = time.time()
+#     if now - _last_screen_change > 3:
+#         _last_screen_change = now
+#         threading.Thread(target=apply_xrandr_delayed).start()
 
 
 # Drag floating layouts.

@@ -128,8 +128,10 @@ alias su="echo 'use \"sudo -s\"'"
 
 # Utility aliases
 alias pdf="llpp"
+alias pdf="llpp"
 alias img="magick display"
 alias ci='ping -w 1 -c 1 8.8.8.8 > /dev/null && echo "success" || echo "unsuccessful"'
+alias ac="autorandr --change --default laptop"
 alias log='klogg'
 #alias remenissions='sudo docker run --rm -it -v $(pwd):/shared remenissions'
 alias c="clear"
