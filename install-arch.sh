@@ -29,7 +29,7 @@ rm -rf paru
 
 ## Basic packages
 echo "Installing basic packages..."
-yes | sudo pacman -S pacman-contrib python python-pip lua go neovim qtile python-xlib lightdm lightdm-slick-greeter plymouth picom udiskie pulseaudio xorg-server xorg-xrandr autorandr docker docker-compose xclip nftables reflector bluez bluez-utils
+yes | sudo pacman -S pacman-contrib python python-pip lua go neovim qtile python-xlib lightdm lightdm-slick-greeter plymouth picom udiskie pulseaudio xorg-server xorg-xrandr autorandr docker docker-compose xclip nftables reflector bluez bluez-utils tlp
 paru -S qtile-extras dcron nvm rofi-greenclip
 
 echo "Installing node (version 20) and pnpm..."
@@ -46,6 +46,8 @@ sudo usermod -aG docker $USER
 sudo systemctl enable dcron.service
 
 sudo systemctl enable bluetooth.service
+
+sudo systemctl enable tlp.service
 
 ## Applications
 echo "Installing CLI applications..."
