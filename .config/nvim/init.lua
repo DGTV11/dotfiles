@@ -48,3 +48,48 @@ require 'nvim-treesitter.configs'.setup {
 
 vim.opt.conceallevel = 1
 vim.opt.mouse = ""
+
+
+-- turn on hybrid numbers by default
+vim.wo.number         = true
+vim.wo.relativenumber = true
+
+-- create an augroup so you can easily clear/reload
+local group           = vim.api.nvim_create_augroup("NumberToggle", { clear = true })
+
+-- when entering : command-line → absolute only
+vim.api.nvim_create_autocmd("CmdlineEnter", {
+  group    = group,
+  pattern  = ":",
+  callback = function()
+    vim.wo.relativenumber = false
+  end,
+})
+
+-- when leaving command-line → back to hybrid
+vim.api.nvim_create_autocmd("CmdlineLeave", {
+  group    = group,
+  pattern  = ":",
+  callback = function()
+    vim.wo.relativenumber = true
+  end,
+})
+
+
+-- absolute in insert too
+vim.api.nvim_create_autocmd("InsertEnter", {
+  group    = group,
+  pattern  = "*",
+  callback = function()
+    vim.wo.relativenumber = false
+  end,
+})
+
+-- restore hybrid on leaving insert
+vim.api.nvim_create_autocmd("InsertLeave", {
+  group    = group,
+  pattern  = "*",
+  callback = function()
+    vim.wo.relativenumber = true
+  end,
+})
