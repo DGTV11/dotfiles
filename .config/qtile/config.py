@@ -547,6 +547,7 @@ def primary_top_bar():
                 # random_selection=True,
                 random_selection=False,
                 wallpaper_command=None,
+                reverse_sorting=True,
                 decorations=[
                     rect_decor(),
                 ],

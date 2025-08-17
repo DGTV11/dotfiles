@@ -48,6 +48,7 @@ class SortedWallpaper(base._TextBox):
             "fill",
             "How to fit the wallpaper when wallpaper_command isNone. None, 'fill' or 'stretch'.",
         ),
+        ("reverse_sorting", False, "Reverse the wallpaper sort order."),
     ]
 
     def __init__(self, **config):
@@ -77,7 +78,10 @@ class SortedWallpaper(base._TextBox):
                     os.path.isfile,
                     map(
                         self.get_path,
-                        sorted(os.listdir(os.path.expanduser(self.directory))),
+                        sorted(
+                            os.listdir(os.path.expanduser(self.directory)),
+                            reverse=self.reverse_sorting,
+                        ),
                     ),
                 )
             )
