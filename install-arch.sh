@@ -100,28 +100,7 @@ cd $HOME/dotfiles
 mkdir .config/qtile/wallpapers
 axel https://i.redd.it/2ksegq0ad9zc1.png -o .config/qtile/wallpapers/distant-horizons-wallpaper-with-bee.png
 axel https://i.redd.it/n105zgebijoc1.png -o .config/qtile/wallpapers/distant-horizons-wallpaper-vanillagen.png
-cp misc/images/distant-horizons-wallpaper-terralith-tectonic.png .config/qtile/wallpapers/distant-horizons-wallpaper-terralith-tectonic.png
-cp misc/images/cloudy-quasar-catppuccin-mocha.png .config/qtile/wallpapers/cloudy-quasar-catppuccin-mocha.png
-cp misc/images/two-miffy-and-jigglypuff.png .config/qtile/wallpapers/two-miffy-and-jigglypuff.png
-cp misc/images/near-starter-base-1-freedom-smp.png .config/qtile/wallpapers/near-starter-base-1-freedom-smp.png
-cp misc/images/near-starter-base-2-freedom-smp.png .config/qtile/wallpapers/near-starter-base-2-freedom-smp.png
-cp misc/images/near-starter-base-3-freedom-smp.png .config/qtile/wallpapers/near-starter-base-3-freedom-smp.png
-cp misc/images/near-starter-base-4-freedom-smp.png .config/qtile/wallpapers/near-starter-base-4-freedom-smp.png
-cp misc/images/near-mesa-biome-freedom-smp.png .config/qtile/wallpapers/near-mesa-biome-freedom-smp.png
-cp misc/images/mountain-view-1-freedom-smp.png .config/qtile/wallpapers/mountain-view-1-freedom-smp.png
-cp misc/images/mountain-view-2-freedom-smp.png .config/qtile/wallpapers/mountain-view-2-freedom-smp.png
-cp misc/images/mountain-view-3-freedom-smp.png .config/qtile/wallpapers/mountain-view-3-freedom-smp.png
-cp misc/images/mountain-view-4-freedom-smp.png .config/qtile/wallpapers/mountain-view-4-freedom-smp.png
-cp misc/images/mountain-view-5-freedom-smp.png .config/qtile/wallpapers/mountain-view-5-freedom-smp.png
-cp misc/images/mountain-view-6-freedom-smp.png .config/qtile/wallpapers/mountain-view-6-freedom-smp.png
-cp misc/images/mountain-view-7-freedom-smp.png .config/qtile/wallpapers/mountain-view-7-freedom-smp.png
-cp misc/images/mountain-base-1-freedom-smp.png .config/qtile/wallpapers/mountain-base-1-freedom-smp.png
-cp misc/images/mountain-base-2-freedom-smp.png .config/qtile/wallpapers/mountain-base-2-freedom-smp.png
-cp misc/images/mountain-base-3-freedom-smp.png .config/qtile/wallpapers/mountain-base-3-freedom-smp.png
-cp misc/images/mountain-base-4-freedom-smp.png .config/qtile/wallpapers/mountain-base-4-freedom-smp.png
-cp misc/images/snowy-place-day-freedom-smp.png .config/qtile/wallpapers/snowy-place-day-freedom-smp.png
-cp misc/images/snowy-place-evening-freedom-smp.png .config/qtile/wallpapers/snowy-place-evening-freedom-smp.png
-cp misc/images/snowy-place-night-freedom-smp.png .config/qtile/wallpapers/snowy-place-night-freedom-smp.png
+cp misc/images/wallpapers/* .config/qtile/wallpapers
 
 ## /etc/pacman.conf
 sudo cp misc/pacman.conf /etc/pacman.conf
