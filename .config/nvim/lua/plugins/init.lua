@@ -53,8 +53,14 @@ return {
         python = { "isort", "black" },
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
         javascript = { "prettier" },
+        -- html = { "prettierd", "prettier", stop_after_first = true },
+        html = { "prettier" },
+        -- css = { "prettierd", "prettier", stop_after_first = true },
+        css = { "prettier" },
         -- markdown = { "markdownfmt" }
-        go = { "gofmt" }
+        go = { "gofmt" },
+        htmldjango = { "djlint" },
+        jinja = { "djlint" },
       },
       -- Set default options
       default_format_opts = {
@@ -71,12 +77,21 @@ return {
         --   command = vim.fn.expand("$HOME/go/bin/mdfmt"),
         --   args = { "-w", "$FILENAME" }
         -- }
+        djlint = {
+          command = "djlint",
+          args = { "--reformat", "-" },
+        },
       },
       options = {
         ignore_errors = false,
         -- Map of treesitter language to filetype
         lang_to_ft = {
           bash = "sh",
+          jinja = 'jinja',
+          jinja2 = 'jinja',
+          j2 = 'jinja',
+          html = 'html',
+          htmldjango = 'html',
         },
         -- Map of treesitter language to file extension
         -- A temporary file name with this extension will be generated during formatting
@@ -94,6 +109,7 @@ return {
           rust = "rs",
           teal = "tl",
           typescript = "ts",
+          html = "html",
         },
       }
     },
@@ -130,12 +146,20 @@ return {
         "vimdoc",
         "html",
         "css",
+        "javascript",
+        "jinja",
+        "htmldjango",
         "python",
         "rust",
         "c",
         "cpp",
         "bash",
         "latex"
+      },
+
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
       }
     }
   },
@@ -476,4 +500,17 @@ return {
       },
     },
   },
+  {
+    'vyfor/cord.nvim',
+    lazy = false,
+    build = ':Cord update',
+    opts = {
+      text = {
+        editing = function(opts)
+          return string.format('Editing %s', opts.filename)
+        end,
+      }
+    }
+    -- opts = {}
+  }
 }
