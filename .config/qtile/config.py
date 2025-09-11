@@ -272,6 +272,12 @@ keys = [
         lazy.spawn("playerctl play-pause"),
         desc="Play/Pause player",
     ),
+    Key(
+        ["control"],
+        "Page_Down",
+        lazy.spawn(f"/home/{os.getlogin()}/.config/qtile/screenshotter.sh full"),
+        desc="Screenshot",
+    ),
     Key(["shift"], "Page_Up", lazy.spawn("playerctl next"), desc="Skip to next"),
     Key(
         ["shift"],

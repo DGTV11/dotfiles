@@ -128,7 +128,6 @@ alias su="echo 'use \"sudo -s\"'"
 
 # Utility aliases
 alias pdf="llpp"
-alias pdf="llpp"
 alias img="magick display"
 alias ci='ping -w 1 -c 1 8.8.8.8 > /dev/null && echo "success" || echo "unsuccessful"'
 alias ac="autorandr --change --default laptop"
@@ -141,8 +140,7 @@ alias q="exit"
 alias sn="shutdown -h now"
 alias office="libreoffice"
 alias ytdown="yt-dlp --embed-thumbnail -f bestaudio -x --audio-format mp3 --audio-quality 0"
-alias minikube-start="minikube start --driver=qemu --qemu-firmware-path=/usr/share/qemu"
-# alias rpivpn="sudo openvpn --config /etc/openvpn/openvpn.conf"
+alias http="xh"
 
 # Alert for long running commands
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
