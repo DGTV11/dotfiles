@@ -137,14 +137,14 @@ keys = [
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "b", lazy.spawn("qutebrowser"), desc="Launch Qutebrowser"),
     Key([mod, "shift"], "b", lazy.spawn("firefox"), desc="Launch Firefox"),
-    # Key(
-    #     [mod],
-    #     "s",
-    #     lazy.spawn(
-    #         "bash -c 'env LD_PRELOAD=/usr/lib/spotify-adblock.so spotify --uri=%U'"
-    #     ),
-    #     desc="Launch Spotify",
-    # ),
+    Key(
+        [mod],
+        "s",
+        lazy.spawn(
+            "bash -c 'env LD_PRELOAD=/usr/lib/spotify-adblock.so spotify --uri=%U'"
+        ),
+        desc="Launch Spotify",
+    ),
     # Key(
     #     [mod],
     #     "j",
