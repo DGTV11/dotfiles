@@ -12,12 +12,12 @@
     //     }
     // },
     "logo": {
-        "source": "/home/danielwee/.config/fastfetch/Atom.ascii", // https://github.com/dlcgold/ascii-art-neofetch/blob/master/Atom.ascii
-        "type": "file",
-        "color": {
-            "1": "blue",
-            "2": "red"
-        },
+        // "source": "/home/danielwee/.config/fastfetch/Atom.ascii", // https://github.com/dlcgold/ascii-art-neofetch/blob/master/Atom.ascii
+        // "type": "file",
+        // "color": {
+        //     "1": "blue",
+        //     "2": "red"
+        // },
         "padding": {
             "top": 2,
             "left": 3
