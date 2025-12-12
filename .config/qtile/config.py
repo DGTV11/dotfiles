@@ -553,7 +553,7 @@ def primary_top_bar():
                 # random_selection=True,
                 random_selection=False,
                 wallpaper_command=None,
-                reverse_sorting=True,
+                # reverse_sorting=True,
                 decorations=[
                     rect_decor(),
                 ],
@@ -685,10 +685,10 @@ def secondary_top_bar(monitor_num):
                 scroll=True,
                 width=300,
                 directory=WALLPAPER_DIR,
-                # wallpaper="cloudy-quasar-catppuccin-mocha",
                 # random_selection=True,
                 random_selection=False,
                 wallpaper_command=None,
+                # reverse_sorting=True,
                 decorations=[
                     rect_decor(),
                 ],
