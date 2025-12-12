@@ -34,3 +34,5 @@ export PATH="$PATH:/home/danielwee/.local/bin"
 export PATH="$PATH:/home/danielwee/.lmstudio/bin"
 # End of LM Studio CLI section
 
+
+export PATH=$PATH:/home/danielwee/.spicetify
