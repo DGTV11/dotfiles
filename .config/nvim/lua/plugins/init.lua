@@ -500,17 +500,16 @@ return {
       },
     },
   },
-  {
-    'vyfor/cord.nvim',
-    lazy = false,
-    build = ':Cord update',
-    opts = {
-      text = {
-        editing = function(opts)
-          return string.format('Editing %s', opts.filename)
-        end,
-      }
-    }
-    -- opts = {}
-  }
+  -- {
+  --   'vyfor/cord.nvim',
+  --   lazy = false,
+  --   build = ':Cord update',
+  --   opts = {
+  --     text = {
+  --       editing = function(opts)
+  --         return string.format('Editing %s', opts.filename)
+  --       end,
+  --     }
+  --   }
+  -- }
 }
