@@ -160,6 +160,9 @@ export PATH="$PATH:$HOME/.spicetify"
 # go path
 export PATH="$PATH:$(go env GOPATH)/bin"
 
+# ruby gem path
+export PATH="$PATH:$HOME/.local/share/gem/ruby/3.4.0/bin"
+
 # Cargo environment
 . "$HOME/.cargo/env"
 
