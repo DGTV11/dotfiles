@@ -115,7 +115,7 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # Additional aliases
-alias cat="bat"
+# alias cat="bat" #hell no
 alias neofetch="fastfetch"
 alias cmatrix="/bin/unimatrix"
 alias lg="lazygit"
