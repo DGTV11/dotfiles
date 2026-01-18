@@ -88,6 +88,21 @@ def on_window_event(*args):
     adjust_bar_visibility(qtile)
 
 
+@lazy.function
+def hide_all_bars_then_reload(qtile):
+    try:
+        for screen in qtile.screens:
+            if screen.top and screen.top.is_show():  # only if visible
+                screen.top.show(False)
+        # Small sleep is sometimes needed to let X11/Wayland flush
+        # import time
+        # time.sleep(0.05)   # ← uncomment if hiding isn't instant
+    except Exception:
+        pass  # be silent on first load or errors
+
+    qtile.cmd_reload_config()
+
+
 # @lazy.function
 # def shell(qtile, command):
 #     os.system(command)
@@ -177,7 +192,8 @@ keys = [
         lazy.window.toggle_floating(),
         desc="Toggle floating on the focused window",
     ),
-    Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
+    # Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
+    Key([mod, "control"], "r", hide_all_bars_then_reload, desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key(
         [mod],
@@ -781,25 +797,6 @@ WALLPAPER_PATH = (
 
 WALLPAPER_DIR = f"/home/{os.getlogin()}/.config/qtile/wallpapers/"
 
-# num_monitors = get_num_monitors()
-# screens = [
-#     Screen(
-#         # wallpaper=WALLPAPER_PATH,
-#         # wallpaper_mode="fill",
-#         top=primary_top_bar(),
-#     ),
-# ]
-#
-#
-# if num_monitors > 1:
-#     for m in range(num_monitors - 1):
-#         screens.append(
-#             Screen(
-#                 # wallpaper=WALLPAPER_PATH,
-#                 # wallpaper_mode="fill",
-#                 top=secondary_top_bar(m + 2),
-#             ),
-#         )
 
 screens = [
     Screen(top=primary_top_bar()),
@@ -807,6 +804,28 @@ screens = [
     Screen(top=secondary_top_bar(3)),
     Screen(top=secondary_top_bar(4)),
 ]
+
+# screens = []
+#
+# real_count = 1  # fallback
+#
+# try:
+#     import subprocess
+#
+#     out = subprocess.check_output(["xrandr", "--current"]).decode()
+#     real_count = sum(
+#         1
+#         for line in out.splitlines()
+#         if " connected" in line and ("+" in line or "*" in line)
+#     )
+# except:
+#     pass
+#
+# for i in range(real_count):
+#     if i == 0:
+#         screens.append(Screen(top=primary_top_bar()))
+#     else:
+#         screens.append(Screen(top=secondary_top_bar(i + 1)))
 
 
 # @hook.subscribe.screen_change
