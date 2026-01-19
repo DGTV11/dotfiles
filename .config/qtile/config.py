@@ -61,9 +61,18 @@ def window_to_next_screen(qtile, switch_group=False, switch_screen=False):
             qtile.cmd_to_screen(i + 1)
 
 
+reloading_config = False
+
+
 def adjust_bar_visibility(qtile):
+    global reloading_config
+
     bar = qtile.current_screen.top
     current_window = qtile.current_window
+
+    if reloading_config:
+        bar.show(False)
+        return
 
     if current_window and current_window.fullscreen:
         if bar and bar.is_show():
@@ -90,6 +99,9 @@ def on_window_event(*args):
 
 @lazy.function
 def hide_all_bars_then_reload(qtile):
+    global reloading_config
+
+    reloading_config = True
     try:
         for screen in qtile.screens:
             if screen.top and screen.top.is_show():  # only if visible
@@ -101,6 +113,12 @@ def hide_all_bars_then_reload(qtile):
         pass  # be silent on first load or errors
 
     qtile.cmd_reload_config()
+
+    reloading_config = False
+
+    for screen in qtile.screens:
+        if screen.top and screen.top.is_show():
+            screen.top.show(True)
 
 
 # @lazy.function
