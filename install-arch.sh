@@ -29,7 +29,7 @@ rm -rf paru
 
 ## Basic packages
 echo "Installing basic packages..."
-yes | sudo pacman -S pacman-contrib python python-pip lua go neovim qtile python-xlib lightdm lightdm-slick-greeter plymouth picom udiskie pulseaudio xorg-server xorg-xrandr autorandr docker docker-compose xclip nftables reflector bluez bluez-utils tlp
+yes | sudo pacman -S pacman-contrib python python-pip lua go neovim qtile python-xlib lightdm lightdm-slick-greeter plymouth picom udiskie pulseaudio xorg-server xorg-xrandr autorandr docker docker-compose xclip nftables reflector bluez bluez-utils tlp fcitx5-im fcitx5-chinese-addons
 paru -S qtile-extras dcron nvm rofi-greenclip
 
 echo "Installing node (version 20) and pnpm..."
