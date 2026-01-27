@@ -102,6 +102,12 @@ axel https://i.redd.it/2ksegq0ad9zc1.png -o .config/qtile/wallpapers/distant-hor
 axel https://i.redd.it/n105zgebijoc1.png -o .config/qtile/wallpapers/distant-horizons-wallpaper-vanillagen.png
 cp misc/images/wallpapers/* .config/qtile/wallpapers
 
+## fcitx5 theme
+
+git clone https://github.com/catppuccin/fcitx5.git
+mkdir -p ~/.local/share/fcitx5/themes/
+cp -r ./fcitx5/src/* ~/.local/share/fcitx5/themes
+
 ## /etc/pacman.conf
 sudo cp misc/pacman.conf /etc/pacman.conf
 
