@@ -147,9 +147,9 @@ alias ytdown="yt-dlp \
   --audio-format mp3 \
   --audio-quality 0 \
   -f 'bestaudio/best' \
-  --restrict-filenames \
-  --cookies ~/cookies.txt \
   --extractor-args 'youtube:player-client=default,-android_sdkless'"
+  # --restrict-filenames \
+  # --cookies ~/cookies.txt \
 # alias http="xh"
 # alias one="onefetch"
 
