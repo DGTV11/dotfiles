@@ -140,9 +140,18 @@ alias q="exit"
 alias sn="shutdown -h now"
 alias dc="docker compose"
 alias office="libreoffice"
-alias ytdown="yt-dlp --embed-thumbnail -f bestaudio -x --audio-format mp3 --audio-quality 0"
+# alias ytdown="yt-dlp --embed-thumbnail -f bestaudio -x --audio-format mp3 --audio-quality 0"
+alias ytdown="yt-dlp \
+  --embed-thumbnail \
+  -x \
+  --audio-format mp3 \
+  --audio-quality 0 \
+  -f 'bestaudio/best' \
+  --restrict-filenames \
+  --cookies ~/cookies.txt \
+  --extractor-args 'youtube:player-client=default,-android_sdkless'"
 # alias http="xh"
-alias one="onefetch"
+# alias one="onefetch"
 
 # Alert for long running commands
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
