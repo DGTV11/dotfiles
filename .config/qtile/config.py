@@ -312,6 +312,11 @@ keys = [
         lazy.spawn(f"/home/{os.getlogin()}/.config/qtile/screenshotter.sh full"),
         desc="Screenshot",
     ),
+    Key(
+        ["control", "shift"],
+        "Page_Down",
+        lazy.spawn(f"/home/{os.getlogin()}/.config/qtile/screenshotter.sh screen"),
+    ),
     Key(["shift"], "Page_Up", lazy.spawn("playerctl next"), desc="Skip to next"),
     Key(
         ["shift"],

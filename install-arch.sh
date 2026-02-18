@@ -63,7 +63,7 @@ paru -S wasistlos rofimoji llpp klogg anki
 ## Themes & fonts
 echo "Installing themes and fonts..."
 yes | sudo pacman -S ttf-jetbrains-mono-nerd ttf-space-mono-nerd noto-fonts-cjk noto-fonts-emoji
-paru -S phinger-cursors ttf-ubraille ttf-ms-win11-auto ttf-adobe-kaiti
+paru -S phinger-cursors ttf-ubraille ttf-ms-win11-auto ttf-adobe-kaiti maplemono-ttf maplemononormal-ttf
 
 yes | sudo pacman -S sassc gtk-engine-murrine gnome-themes-extra
 git clone https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme.git
