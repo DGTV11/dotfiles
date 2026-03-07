@@ -152,6 +152,8 @@ alias ytdown="yt-dlp \
   # --cookies ~/cookies.txt \
 # alias http="xh"
 # alias one="onefetch"
+alias binaryninja="/opt/binaryninja-free/binaryninja"
+alias binja="/opt/binaryninja-free/binaryninja"
 
 # Alert for long running commands
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
