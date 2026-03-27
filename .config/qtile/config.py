@@ -98,7 +98,7 @@ def on_window_event(*args):
 
 
 @lazy.function
-def hide_all_bars_then_reload(qtile):
+def hide_all_bars_then_reload(qtile):  # TODO: fix
     global reloading_config
 
     reloading_config = True
