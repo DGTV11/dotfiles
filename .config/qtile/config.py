@@ -211,7 +211,8 @@ keys = [
         desc="Toggle floating on the focused window",
     ),
     # Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
-    Key([mod, "control"], "r", hide_all_bars_then_reload, desc="Reload the config"),
+    Key([mod, "control"], "r", lazy.restart(), desc="Restart Qtile"),
+    # Key([mod, "control"], "r", hide_all_bars_then_reload, desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key(
         [mod],
