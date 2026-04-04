@@ -600,8 +600,8 @@ def primary_top_bar():
                 scroll=True,
                 width=300,
                 directory=WALLPAPER_DIR,
-                # random_selection=True,
-                random_selection=False,
+                random_selection=True,
+                # random_selection=False,
                 wallpaper_command=None,
                 # reverse_sorting=True,
                 decorations=[
@@ -735,8 +735,8 @@ def secondary_top_bar(monitor_num):
                 scroll=True,
                 width=300,
                 directory=WALLPAPER_DIR,
-                # random_selection=True,
-                random_selection=False,
+                random_selection=True,
+                # random_selection=False,
                 wallpaper_command=None,
                 # reverse_sorting=True,
                 decorations=[
