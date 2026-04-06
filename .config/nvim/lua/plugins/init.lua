@@ -431,17 +431,17 @@ return {
       )
     end
   },
-  {
-    "atiladefreitas/dooing",
-    lazy = false,
-    config = function()
-      require("dooing").setup(
-        {
-          save_path = vim.fn.expand("$HOME/vaults/THE-VAULT/dooing_todos.json")
-        }
-      )
-    end
-  },
+  -- {
+  --   "atiladefreitas/dooing",
+  --   lazy = false,
+  --   config = function()
+  --     require("dooing").setup(
+  --       {
+  --         save_path = vim.fn.expand("$HOME/vaults/THE-VAULT/dooing_todos.json")
+  --       }
+  --     )
+  --   end
+  -- },
   {
     "DreamMaoMao/yazi.nvim",
     dependencies = {
