@@ -5,6 +5,7 @@
 # Copyright (c) 2012 Craig Barnes
 # Copyright (c) 2013 horsik
 # Copyright (c) 2013 Tao Sauvage
+# Copyright (c) 2025 Daniel Wee
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -97,28 +98,9 @@ def on_window_event(*args):
     adjust_bar_visibility(qtile)
 
 
-@lazy.function
-def hide_all_bars_then_reload(qtile):  # TODO: fix
-    global reloading_config
-
-    reloading_config = True
-    try:
-        for screen in qtile.screens:
-            if screen.top and screen.top.is_show():  # only if visible
-                screen.top.show(False)
-        # Small sleep is sometimes needed to let X11/Wayland flush
-        # import time
-        # time.sleep(0.05)   # ← uncomment if hiding isn't instant
-    except Exception:
-        pass  # be silent on first load or errors
-
-    qtile.cmd_reload_config()
-
-    reloading_config = False
-
-    for screen in qtile.screens:
-        if screen.top and screen.top.is_show():
-            screen.top.show(True)
+def shuffle_wallpapers(qtile):
+    for wallpaper in wallpaper_widgets:
+        wallpaper.set_wallpaper(force_random=True)
 
 
 # @lazy.function
@@ -187,10 +169,7 @@ keys = [
     Key([mod, "shift"], "s", lazy.spawn("solanum"), desc="Launch Solanum"),
     Key([mod], "o", lazy.spawn("obsidian"), desc="Launch Obsidian"),
     Key([mod], "a", lazy.spawn("anki"), desc="Launch Anki"),
-    # Key([mod, "shift"], "t", lazy.spawn("thunar"), desc="Launch Thunar"),
     Key([mod], "t", lazy.spawn("thunar"), desc="Launch Thunar"),
-    Key([mod, "shift"], "t", lazy.spawn("teams"), desc="Launch MS Teams"),
-    # Key([mod, "shift"], "w", lazy.spawn("wasistlos"), desc="Launch Whatsapp for Linux"),
     Key([mod], "d", lazy.spawn("discord"), desc="Launch Discord"),
     Key([mod, "shift"], "v", lazy.spawn("virt-manager"), desc="Launch virt-manager"),
     # Key([mod], "m", lazy.spawn("modrinth-app"), desc="Launch Modrinth App"),
@@ -210,9 +189,7 @@ keys = [
         lazy.window.toggle_floating(),
         desc="Toggle floating on the focused window",
     ),
-    # Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "r", lazy.restart(), desc="Restart Qtile"),
-    # Key([mod, "control"], "r", hide_all_bars_then_reload, desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key(
         [mod],
@@ -239,6 +216,12 @@ keys = [
             "rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'"
         ),
         desc="Show clipboard history with rofi",
+    ),
+    Key(
+        [mod, "control"],
+        "w",
+        lazy.function(shuffle_wallpapers),
+        desc="Shuffle all wallpapers",
     ),
     Key(
         [mod, "shift"],
@@ -467,12 +450,6 @@ keys.extend(
             lazy.group["scratchpad"].dropdown_toggle("music"),
             desc="Toggle Supersonic in scratchpad",
         ),
-        Key(
-            [mod, "shift"],
-            "w",
-            lazy.group["scratchpad"].dropdown_toggle("whatsapp"),
-            desc="Launch Whatsapp for Linux in scratchpad",
-        ),
     ]
 )
 
@@ -531,6 +508,13 @@ def get_num_monitors():
         return num_monitors
 
 
+WALLPAPER_PATH = (
+    f"/home/{os.getlogin()}/.config/qtile/wallpapers/cloudy-quasar-catppuccin-mocha.png"
+)
+
+WALLPAPER_DIR = f"/home/{os.getlogin()}/.config/qtile/wallpapers/"
+
+
 widget_defaults = dict(
     font="JetBrains Mono NL NF",
     fontsize=12,
@@ -564,6 +548,31 @@ def rect_decor():
     return RectDecoration(colour="#1f2335", radius=8, filled=True, padding_y=2)
 
 
+wallpaper_widgets = []
+
+
+def wallpaper_widget():
+    ww = custom_widgets.SortedWallpaper(
+        font="JetBrains Mono NL NF",
+        fontsize=14,
+        padding=10,
+        scroll_fixed_width=True,
+        scroll=True,
+        width=300,
+        directory=WALLPAPER_DIR,
+        random_selection=False,
+        wallpaper_command=None,
+        # reverse_sorting=True,
+        decorations=[
+            rect_decor(),
+        ],
+    )
+
+    wallpaper_widgets.append(ww)
+
+    return ww
+
+
 def primary_top_bar():
     return bar.Bar(
         [
@@ -592,22 +601,7 @@ def primary_top_bar():
             #     ],
             # ),
             separator(),
-            custom_widgets.SortedWallpaper(
-                font="JetBrains Mono NL NF",
-                fontsize=14,
-                padding=10,
-                scroll_fixed_width=True,
-                scroll=True,
-                width=300,
-                directory=WALLPAPER_DIR,
-                random_selection=True,
-                # random_selection=False,
-                wallpaper_command=None,
-                # reverse_sorting=True,
-                decorations=[
-                    rect_decor(),
-                ],
-            ),
+            wallpaper_widget(),
             separator(),
             widget.Spacer(),
             widget.WindowName(
@@ -727,22 +721,7 @@ def secondary_top_bar(monitor_num):
             #     ],
             # ),
             separator(),
-            custom_widgets.SortedWallpaper(
-                font="JetBrains Mono NL NF",
-                fontsize=14,
-                padding=10,
-                scroll_fixed_width=True,
-                scroll=True,
-                width=300,
-                directory=WALLPAPER_DIR,
-                random_selection=True,
-                # random_selection=False,
-                wallpaper_command=None,
-                # reverse_sorting=True,
-                decorations=[
-                    rect_decor(),
-                ],
-            ),
+            wallpaper_widget(),
             separator(),
             widget.Spacer(),
             widget.WindowName(
@@ -823,75 +802,12 @@ def secondary_top_bar(monitor_num):
     )
 
 
-# https://raw.githubusercontent.com/42willow/walls-bak/refs/heads/main/dist/Mocha/Kurzgesagt-Cloudy_Quasar_1.png
-
-WALLPAPER_PATH = (
-    f"/home/{os.getlogin()}/.config/qtile/wallpapers/cloudy-quasar-catppuccin-mocha.png"
-)
-
-WALLPAPER_DIR = f"/home/{os.getlogin()}/.config/qtile/wallpapers/"
-
-
 screens = [
     Screen(top=primary_top_bar()),
     Screen(top=secondary_top_bar(2)),
     Screen(top=secondary_top_bar(3)),
     Screen(top=secondary_top_bar(4)),
 ]
-
-# screens = []
-#
-# real_count = 1  # fallback
-#
-# try:
-#     import subprocess
-#
-#     out = subprocess.check_output(["xrandr", "--current"]).decode()
-#     real_count = sum(
-#         1
-#         for line in out.splitlines()
-#         if " connected" in line and ("+" in line or "*" in line)
-#     )
-# except:
-#     pass
-#
-# for i in range(real_count):
-#     if i == 0:
-#         screens.append(Screen(top=primary_top_bar()))
-#     else:
-#         screens.append(Screen(top=secondary_top_bar(i + 1)))
-
-
-# @hook.subscribe.screen_change
-# def restart_on_randr(_):
-#     subprocess.run(["xrandr", "--auto"])
-#     # qtile.reload_config()
-#
-
-# @hook.subscribe.screen_change
-# def restart_on_randr(_):
-#     global _last_screen_change
-#     now = time.time()
-#
-#     if now - _last_screen_change > 2:  # 2 second debounce
-#         # subprocess.run(["xrandr", "--auto"])
-#         qtile.reload_config()
-#         _last_screen_change = now
-
-
-# def apply_xrandr_delayed():
-#     time.sleep(1.5)  # wait for monitor to fully connect
-#     subprocess.run(["autorandr --change"])
-#
-#
-# @hook.subscribe.screen_change
-# def restart_on_randr(_):
-#     global _last_screen_change
-#     now = time.time()
-#     if now - _last_screen_change > 3:
-#         _last_screen_change = now
-#         threading.Thread(target=apply_xrandr_delayed).start()
-
 
 # Drag floating layouts.
 mouse = [
@@ -956,156 +872,3 @@ wmname = "LG3D"
 def autostart():
     as_script = os.path.expanduser("~/.config/qtile/autostart.sh")
     subprocess.Popen([as_script])
-
-    # processes = [
-    #     ["thunar", "--daemon"],
-    #     # ["udiskie"]
-    #     ["greenclip", "daemon"],
-    #     ["autorandr", "--change", "--default", "laptop"],
-    #     ["nitrogen", "--restore"],
-    #     ["picom"],
-    #     ["workrave"]
-    # ]
-    #
-    # for p in processes:
-    #     subprocess.Popen(p)
-
-
-"""
-# Persistence
-import json
-import psutil
-import os
-
-from libqtile import hook, qtile
-from libqtile.backend.base import Window
-from libqtile.log_utils import logger
-
-CONFIG_PATH = os.path.expanduser("~/.config/qtile/")
-
-excluded_apps = ["plank"]
-
-
-class Session:
-    def __init__(self):
-        self.apps: list[dict[int, str]] = []
-        self.save_path = os.path.join(CONFIG_PATH, "json", "session.json")
-        if not os.path.exists(self.save_path):
-            self.from_windows()
-        else:
-            self.restore()
-
-    def add_app(self, wid: int, exe: str):
-        if not (
-            any(app["wid"] == wid for app in self.apps)
-            or any(i in exe for i in excluded_apps)
-            or qtile.windows_map[wid].group.name == "scratchpad"
-        ):
-            logger.info("Adding %s to session", exe)
-            self.apps.append({"wid": wid, "exe": exe})
-        else:
-            logger.info("NOT adding excluded app %s to session", exe)
-        self.log()
-
-    def remove_app(self, wid: int):
-        for i in range(len(self.apps)):
-            if self.apps[i]["wid"] == wid:
-                exe = next((app["exe"] for app in self.apps if app["wid"] == wid), None)
-                logger.info("Removing %s from session", exe)
-                del self.apps[i]
-                break
-        self.log()
-
-    def save(self):
-        with open(self.save_path, "w") as f:
-            json.dump(self.apps, f)
-        apps = [app["exe"] for app in self.apps]
-        logger.info("Saving session with apps: %s", ",".join(apps))
-
-    def restore(self):
-        with open(self.save_path, "r") as f:
-            self.apps = json.load(f)
-
-    def clear(self):
-        self.log()
-        logger.info("Clearing session")
-        self.apps = []
-        self.log()
-
-    def from_windows(self):
-        self.log()
-        logger.info("Setting sessio@hook.subscribe.screen_change
-def restart_on_randr(_):n from current windows")
-        windows = qtile.windows()
-        if windows:
-            for window in windows:
-                wid = window["id"]
-                exe = psutil.Process(int(qtile.windows_map[wid].get_pid())).exe()
-                self.add_app(
-                    wid=wid,
-                    exe=exe,
-                )
-        self.log()
-
-    def log(self):
-        logger.info("Session: %s", @hook.subscribe.screen_change
-def restart_on_randr(_):self.apps)
-
-
-@hook.subscribe.startup_once
-def setup_session():
-    global session
-    session = Session()
-
-
-@hook.subscribe.startup_once
-def restore_session():
-    if "session" in globals():
-        apps = [app["exe"] for app in session.apps]
-        logger.info("Restoring session with apps: %s", ",".join(apps))
-        for app in apps:
-            qtile.spawn(app)
-
-
-@hook.subscribe.client_managed
-def add_app_to_session(client: Window):
-    if "session" in globals():
-        wid = client.info()["id"]
-        exe = psutil.Process(client.window.get_net_wm_pid()).exe()
-        session.add_app(wid, exe)
-
-
-@hook.subscribe.client_killed
-def remove_app_from_session(client: Window):
-    if "session" in globals():
-        wid = client.info()["id"]
-        session.remove_app(wid)
-
-
-@hook.subscribe.shutdown
-@hook.subscribe.user("save_session")
-def save_session():
-    if "session" in globals():
-        session.save()
-
-
-@hook.subscribe.user("get_session"@hook.subscribe.screen_change
-def restart_on_randr(_):)
-def log_session():
-    if "session" in globals():
-        session.log()
-
-
-@hook.subscribe.user("set_session")
-def set_session():
-    if "session" in globals():
-        session.from_windows()
-
-
-@hook.subscribe.user("clear_session")
-def clear_session():
-    if "session" in globals():
-        session.clear()
-        if os.path.exists(session.save_path):
-            os.remove(session.save_path)
-"""

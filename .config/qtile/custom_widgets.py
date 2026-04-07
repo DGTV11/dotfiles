@@ -23,7 +23,7 @@ import os
 import random
 import subprocess
 
-from libqtile.log_utils import logger
+from libqtile import qtile
 from libqtile.widget import base
 
 
@@ -88,14 +88,14 @@ class SortedWallpaper(base._TextBox):
         except OSError as e:
             logger.exception("I/O error(%s): %s", e.errno, e.strerror)
 
-    def set_wallpaper(self):
+    def set_wallpaper(self, force_random=False):
         if len(self.images) == 0:
             if self.wallpaper is None:
                 self.text = "empty"
                 return
             else:
                 self.images.append(self.wallpaper)
-        if self.random_selection:
+        if force_random or self.random_selection:
             self.index = random.randint(0, len(self.images) - 1)
         else:
             self.index += 1
@@ -110,5 +110,8 @@ class SortedWallpaper(base._TextBox):
             subprocess.call(self.wallpaper_command)
             self.wallpaper_command.pop()
         else:
-            self.qtile.paint_screen(self.bar.screen, cur_image, self.option)
+            q = self.qtile if hasattr(self, "qtile") else qtile
+            q.paint_screen(
+                self.bar.screen, cur_image, self.option
+            )  # WARNING: self.bar doesnt exist when called by shuffle_wallpapers in config.py, but shuffle_wallpapers still works for some reason
         self.draw()
