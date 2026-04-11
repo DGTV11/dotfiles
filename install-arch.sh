@@ -105,7 +105,6 @@ axel https://i.redd.it/n105zgebijoc1.png -o .config/qtile/wallpapers/distant-hor
 cp misc/images/wallpapers/* .config/qtile/wallpapers
 
 ## fcitx5 theme
-
 git clone https://github.com/catppuccin/fcitx5.git
 mkdir -p ~/.local/share/fcitx5/themes/
 cp -r ./fcitx5/src/* ~/.local/share/fcitx5/themes
