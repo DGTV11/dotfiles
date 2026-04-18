@@ -219,7 +219,7 @@ keys = [
     ),
     Key(
         [mod, "control"],
-        "w",
+        "s",
         lazy.function(shuffle_wallpapers),
         desc="Shuffle all wallpapers",
     ),
@@ -561,6 +561,7 @@ def wallpaper_widget():
         width=300,
         directory=WALLPAPER_DIR,
         random_selection=False,
+        random_initial=True,
         wallpaper_command=None,
         # reverse_sorting=True,
         decorations=[

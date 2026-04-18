@@ -42,6 +42,11 @@ class SortedWallpaper(base._TextBox):
             False,
             "If set, use random initial wallpaper and randomly cycle through the wallpapers.",
         ),
+        (
+            "random_initial",
+            True,
+            "If set, use random initial wallpaper and randomly cycle through the wallpapers.",
+        ),
         ("label", None, "Use a fixed label instead of image name."),
         (
             "option",
@@ -57,7 +62,9 @@ class SortedWallpaper(base._TextBox):
         self.index = 0
         self.images = []
         self.get_wallpapers()
-        if self.random_selection:  # Random selection after reading all files
+        if (
+            self.random_initial or self.random_selection
+        ):  # Random selection after reading all files
             self.index = random.randint(0, len(self.images) - 1)
 
         self.add_callbacks({"Button1": self.set_wallpaper})
