@@ -38,13 +38,13 @@ vim.schedule(function()
   require "mappings"
 end)
 
-require 'nvim-treesitter.configs'.setup {
-  highlight = {
-    enable = true,
-    additional_vim_regex_highlighting = false,
-    disable = { "c" }, -- or selectively disable problematic parts
-  },
-}
+-- require 'nvim-treesitter.configs'.setup {
+--   highlight = {
+--     enable = true,
+--     additional_vim_regex_highlighting = false,
+--     disable = { "c" }, -- or selectively disable problematic parts
+--   },
+-- }
 
 vim.opt.conceallevel = 1
 vim.opt.mouse = ""
