@@ -121,7 +121,7 @@
 
 20) Clone dotfiles repository
 ```bash
-$ git clone https://github.com/DGTV11/dotfiles.git
+$ git clone --depth=1 https://github.com/DGTV11/dotfiles.git
 ```
 
 21) Run `install-arch.sh`
