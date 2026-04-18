@@ -102,6 +102,8 @@ cd $HOME/dotfiles
 mkdir .config/qtile/wallpapers
 axel https://i.redd.it/2ksegq0ad9zc1.png -o .config/qtile/wallpapers/distant-horizons-wallpaper-with-bee.png
 axel https://i.redd.it/n105zgebijoc1.png -o .config/qtile/wallpapers/distant-horizons-wallpaper-vanillagen.png
+axel https://i.redd.it/2h0nqre8no5d1.jpg -o .config/qtile/wallpapers/distant-horizons-cool-map-1.png
+axel https://i.redd.it/qs2cs7e8no5d1.jpg -o .config/qtile/wallpapers/distant-horizons-cool-map-2.png
 cp misc/images/wallpapers/* .config/qtile/wallpapers
 
 ## fcitx5 theme
