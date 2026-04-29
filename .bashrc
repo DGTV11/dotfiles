@@ -122,9 +122,10 @@ alias lg="lazygit"
 alias yz="yazi"
 alias om="oatmeal"
 alias cd="z"
-alias gdb="gdb-pwndbg"
+alias gdb="pwndbg"
 alias checksec="pwn checksec"
 alias su="echo 'use \"sudo -s\"'"
+alias lfd="/home/danielwee/Documents/general-CTF/libc-from-dockerfile.sh"
 
 # Utility aliases
 alias pdf="llpp"
@@ -239,3 +240,11 @@ export PATH="$PATH:/home/danielwee/.lmstudio/bin"
 
 
 export PATH=$PATH:/home/danielwee/.spicetify
+
+# pnpm
+export PNPM_HOME="/home/danielwee/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
