@@ -100,7 +100,7 @@ def on_window_event(*args):
 
 def shuffle_wallpapers(qtile):
     for wallpaper in wallpaper_widgets:
-        wallpaper.set_wallpaper(force_random=True)
+        wallpaper.shuffle()
 
 
 # @lazy.function
@@ -562,6 +562,7 @@ def wallpaper_widget():
         directory=WALLPAPER_DIR,
         random_selection=False,
         random_initial=True,
+        shuffle_timeout=(60 * 10),
         wallpaper_command=None,
         # reverse_sorting=True,
         decorations=[

@@ -24,6 +24,7 @@ import random
 import subprocess
 
 from libqtile import qtile
+from libqtile.log_utils import logger
 from libqtile.widget import base
 
 
@@ -46,6 +47,11 @@ class SortedWallpaper(base._TextBox):
             "random_initial",
             True,
             "If set, use random initial wallpaper and randomly cycle through the wallpapers.",
+        ),
+        (
+            "shuffle_timeout",
+            None,
+            "If set, wallpaper will automatically shuffle after every shuffle_interval seconds.",
         ),
         ("label", None, "Use a fixed label instead of image name."),
         (
@@ -73,6 +79,9 @@ class SortedWallpaper(base._TextBox):
         base._TextBox._configure(self, qtile, bar)
         if not self.bar.screen.wallpaper:
             self.set_wallpaper()
+
+        if self.shuffle_timeout:
+            self.timeout_add(self.shuffle_timeout, self.shuffle_interval)
 
     def get_path(self, file):
         return os.path.join(os.path.expanduser(self.directory), file)
@@ -122,3 +131,10 @@ class SortedWallpaper(base._TextBox):
                 self.bar.screen, cur_image, self.option
             )  # WARNING: self.bar doesnt exist when called by shuffle_wallpapers in config.py, but shuffle_wallpapers still works for some reason
         self.draw()
+
+    def shuffle(self):
+        self.set_wallpaper(force_random=True)
+
+    def shuffle_interval(self):
+        self.shuffle()
+        self.timeout_add(self.shuffle_timeout, self.shuffle_interval)
