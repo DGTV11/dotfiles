@@ -225,6 +225,12 @@ keys = [
     ),
     Key(
         [mod, "shift"],
+        "a",
+        lazy.spawn("autorandr --change --default laptop"),
+        desc="Shuffle all wallpapers",
+    ),
+    Key(
+        [mod, "shift"],
         "comma",
         lazy.function(window_to_next_screen),
         desc="Move window to next screen",

@@ -128,7 +128,7 @@ alias lfd="/home/danielwee/Documents/general-CTF/libc-from-dockerfile.sh"
 
 # Utility aliases
 alias pdf="llpp"
-alias img="magick display"
+alias img="mirage"
 alias ci='ping -w 1 -c 1 8.8.8.8 > /dev/null && echo "success" || echo "unsuccessful"'
 alias ac="autorandr --change --default laptop"
 alias log='klogg'

@@ -58,7 +58,7 @@ paru -S pfetch-rs pulseaudio-ctl cava brillo unimatrix
 
 echo "Installing GUI applications..."
 yes | sudo pacman -S alacritty rofi firefox qutebrowser workrave obsidian thunar solanum discord libreoffice flameshot imagemagick xournalpp pdfarranger virt-manager blueman prismlauncher
-paru -S wasistlos rofimoji llpp klogg anki
+paru -S wasistlos rofimoji llpp klogg anki mirage
 
 ## Themes & fonts
 echo "Installing themes and fonts..."
