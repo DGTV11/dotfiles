@@ -54,7 +54,7 @@ sudo systemctl enable touchegg.service
 ## Applications
 echo "Installing CLI/TUI applications..."
 yes | sudo pacman -S fastfetch starship less curl wget btop openssh rsync stow fzf playerctl bat lazygit yazi starship zoxide thefuck ffmpeg yt-dlp termdown ncdu unzip zip tar screen ueberzugpp silicon tree-sitter-cli axel trash-cli xdotool tealdeer texlive jellyfin-tui
-paru -S pfetch-rs pulseaudio-ctl cava brillo unimatrix
+paru -S pfetch-rs pulseaudio-ctl cava brillo unimatrix btail
 
 echo "Installing GUI applications..."
 yes | sudo pacman -S alacritty rofi firefox qutebrowser workrave obsidian thunar solanum discord libreoffice flameshot imagemagick xournalpp pdfarranger virt-manager blueman prismlauncher
