@@ -57,7 +57,7 @@ yes | sudo pacman -S fastfetch starship less curl wget btop openssh rsync stow f
 paru -S pfetch-rs pulseaudio-ctl cava brillo unimatrix btail
 
 echo "Installing GUI applications..."
-yes | sudo pacman -S alacritty rofi firefox qutebrowser workrave obsidian thunar solanum discord libreoffice ksnip imagemagick xournalpp pdfarranger virt-manager blueman prismlauncher
+yes | sudo pacman -S alacritty rofi firefox qutebrowser workrave obsidian thunar solanum discord libreoffice maim imagemagick xournalpp pdfarranger virt-manager blueman prismlauncher
 paru -S wasistlos rofimoji llpp klogg anki mirage zennotes-bin
 
 ## Themes & fonts
