@@ -299,13 +299,13 @@ keys = [
     Key(
         ["control"],
         "Page_Down",
-        lazy.spawn(f"/home/{os.getlogin()}/.config/qtile/screenshotter.sh full"),
+        lazy.spawn(f"/home/{os.getlogin()}/.config/qtile/screenshotter.sh fullscreen"),
         desc="Screenshot",
     ),
     Key(
         ["control", "shift"],
         "Page_Down",
-        lazy.spawn(f"/home/{os.getlogin()}/.config/qtile/screenshotter.sh screen"),
+        lazy.spawn(f"/home/{os.getlogin()}/.config/qtile/screenshotter.sh current"),
     ),
     Key(["shift"], "Page_Up", lazy.spawn("playerctl next"), desc="Skip to next"),
     Key(
@@ -329,12 +329,12 @@ keys = [
     Key(
         [],
         "Print",
-        lazy.spawn(f"/home/{os.getlogin()}/.config/qtile/screenshotter.sh full"),
+        lazy.spawn(f"/home/{os.getlogin()}/.config/qtile/screenshotter.sh fullscreen"),
     ),
     Key(
         ["control"],
         "Print",
-        lazy.spawn(f"/home/{os.getlogin()}/.config/qtile/screenshotter.sh screen"),
+        lazy.spawn(f"/home/{os.getlogin()}/.config/qtile/screenshotter.sh current"),
     ),
 ]
 
