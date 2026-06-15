@@ -168,6 +168,7 @@ keys = [
     # ),
     Key([mod, "shift"], "s", lazy.spawn("solanum"), desc="Launch Solanum"),
     Key([mod], "o", lazy.spawn("obsidian"), desc="Launch Obsidian"),
+    Key([mod], "z", lazy.spawn("zennotes"), desc="Launch ZenNotes"),
     Key([mod], "a", lazy.spawn("anki"), desc="Launch Anki"),
     Key([mod], "t", lazy.spawn("thunar"), desc="Launch Thunar"),
     Key([mod], "d", lazy.spawn("discord"), desc="Launch Discord"),
