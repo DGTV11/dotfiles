@@ -536,7 +536,7 @@ return {
           require("telescope").extensions.aerial.aerial()
         end,
         mode = "",
-        desc = "Telescope picker",
+        desc = "Telescope find symbols",
       },
     },
 
