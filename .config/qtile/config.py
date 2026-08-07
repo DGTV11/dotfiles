@@ -103,6 +103,11 @@ def shuffle_wallpapers(qtile):
         wallpaper.shuffle()
 
 
+def load_detected_autorandr_profile(qtile):
+    qtile.spawn("autorandr --change --default laptop"),
+    qtile.restart()
+
+
 # @lazy.function
 # def shell(qtile, command):
 #     os.system(command)
@@ -152,14 +157,14 @@ keys = [
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "b", lazy.spawn("qutebrowser"), desc="Launch Qutebrowser"),
     Key([mod, "shift"], "b", lazy.spawn("firefox"), desc="Launch Firefox"),
-    Key(
-        [mod],
-        "s",
-        lazy.spawn(
-            "bash -c 'env LD_PRELOAD=/usr/lib/spotify-adblock.so spotify --uri=%U'"
-        ),
-        desc="Launch Spotify",
-    ),
+    # Key(
+    #     [mod],
+    #     "s",
+    #     lazy.spawn(
+    #         "bash -c 'env LD_PRELOAD=/usr/lib/spotify-adblock.so spotify --uri=%U'"
+    #     ),
+    #     desc="Launch Spotify",
+    # ),
     # Key(
     #     [mod],
     #     "j",
@@ -227,8 +232,9 @@ keys = [
     Key(
         [mod, "shift"],
         "a",
-        lazy.spawn("autorandr --change --default laptop"),
-        desc="Shuffle all wallpapers",
+        # lazy.spawn("autorandr --change --default laptop"),
+        lazy.function(load_detected_autorandr_profile),
+        desc="Load detected autorandr profile",
     ),
     Key(
         [mod, "shift"],
