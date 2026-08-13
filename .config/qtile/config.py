@@ -384,18 +384,18 @@ groups = numerical_groups + [
                 opacity=1.0,
                 on_focus_lost_hide=False,
             ),
-            # DropDown(
-            #     "music",
-            #     "supersonic-desktop",
-            #     x=0.1,
-            #     y=0.1,
-            #     width=0.8,
-            #     height=0.8,
-            #     opacity=1.0,
-            #     on_focus_lost_hide=False,
-            # ),
             DropDown(
                 "music",
+                "supersonic-desktop",
+                x=0.1,
+                y=0.1,
+                width=0.8,
+                height=0.8,
+                opacity=1.0,
+                on_focus_lost_hide=False,
+            ),
+            DropDown(
+                "music2",
                 f"alacritty --command jellyfin-tui",
                 x=0.1,
                 y=0.1,
@@ -462,6 +462,12 @@ keys.extend(
             "j",
             lazy.group["scratchpad"].dropdown_toggle("music"),
             desc="Toggle Supersonic in scratchpad",
+        ),
+        Key(
+            [mod, "mod1"],
+            "j",
+            lazy.group["scratchpad"].dropdown_toggle("music2"),
+            desc="Toggle jellyfin-tui in scratchpad",
         ),
     ]
 )
