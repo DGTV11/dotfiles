@@ -141,15 +141,24 @@ alias sn="shutdown -h now"
 alias dc="docker compose"
 alias office="libreoffice"
 # alias ytdown="yt-dlp --embed-thumbnail -f bestaudio -x --audio-format mp3 --audio-quality 0"
+# alias ytdown="yt-dlp \
+#   --embed-thumbnail \
+#   -x \
+#   --audio-format mp3 \
+#   --audio-quality 0 \
+#   -f 'bestaudio/best' \
+#   --extractor-args 'youtube:player-client=default,-android_sdkless'"
+#   # --restrict-filenames \
+#   # --cookies ~/cookies.txt \
 alias ytdown="yt-dlp \
   --embed-thumbnail \
   -x \
   --audio-format mp3 \
   --audio-quality 0 \
   -f 'bestaudio/best' \
-  --extractor-args 'youtube:player-client=default,-android_sdkless'"
-  # --restrict-filenames \
-  # --cookies ~/cookies.txt \
+  --extractor-args 'youtube:player-client=web_embedded,web,tv' \
+  --output '%(title)s.%(ext)s'"
+alias cel="chinese-english-lookup"
 # alias http="xh"
 # alias one="onefetch"
 alias binaryninja="/opt/binaryninja-free/binaryninja"
