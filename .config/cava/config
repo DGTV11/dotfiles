@@ -152,6 +152,7 @@ source = auto
 # Note: many fonts have weird or missing glyphs for characters used in orientations
 # other than 'bottom', which can make output not look right.
 ; orientation = bottom
+orientation = horizontal
 
 # Visual channels. Can be 'stereo' or 'mono'.
 # 'stereo' mirrors both channels with low frequencies in center.
@@ -267,8 +268,8 @@ gradient_color_8 = '#cc3333'
 # the raw visualization is very noisy, this factor adjusts the integral and gravity filters to keep the signal smooth
 # 100 will be very slow and smooth, 0 will be fast but noisy.
 ; noise_reduction = 77
-noise_reduction = 20
-
+# noise_reduction = 15
+noise_reduction = 12.5
 
 [eq]
 
