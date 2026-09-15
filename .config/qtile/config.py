@@ -217,6 +217,12 @@ keys = [
     ),
     Key(
         [mod],
+        "m",
+        lazy.spawn("rofimoji -f math --action clipboard"),
+        desc="Pick a mathematics symbol and copy it to the clipboard with rofimoji",
+    ),
+    Key(
+        [mod],
         "v",
         lazy.spawn(
             "rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'"
