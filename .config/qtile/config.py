@@ -587,7 +587,8 @@ def wallpaper_widget():
         directory=WALLPAPER_DIR,
         random_selection=False,
         random_initial=True,
-        shuffle_timeout=(60 * 15),
+        # shuffle_timeout=(60 * 15),
+        shuffle_timeout=None,
         wallpaper_command=None,
         # reverse_sorting=True,
         decorations=[
